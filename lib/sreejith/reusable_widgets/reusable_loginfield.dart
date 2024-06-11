@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:nexteons_widgets/sajin/text/custom_text.dart';
 import 'package:nexteons_widgets/sreejith/reusable_widgets/reusable_textFormField.dart';
-import 'package:nexteons_widgets/sreejith/utils/constants.dart';
+
 
 class ReusableLoginTextField extends StatelessWidget {
   ReusableLoginTextField(
@@ -29,25 +29,29 @@ class ReusableLoginTextField extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
 
-        // CustomText(
-        //   text: text,
-        //   style: TextStyle(
-        //           color: color ?? Theme.of(context).textTheme.bodySmall?.color,
-        //           fontSize: fontSize ?? Theme.of(context).textTheme.bodySmall?.fontSize,
-        //           fontWeight: fontWeight ??  Theme.of(context).textTheme.bodySmall?.fontWeight)
-        //       .merge(style),
-
-        // ),
-
-
-        Text(
-          text,
+        CustomText(
+          text: text,
           style: TextStyle(
-                  color: color ?? Theme.of(context).textTheme.bodyMedium?.color,
-                  fontSize: fontSize ?? Theme.of(context).textTheme.bodyMedium?.fontSize,
-                  fontWeight: fontWeight ??  Theme.of(context).textTheme.bodyMedium?.fontWeight)
+                  color: color ?? Theme.of(context).textTheme.labelMedium?.color,
+                  fontSize: fontSize ?? Theme.of(context).textTheme.labelMedium?.fontSize,
+                  fontWeight: fontWeight ??  Theme.of(context).textTheme.labelMedium?.fontWeight)
               .merge(style),
+
         ),
+
+
+        ///need to do gap
+        SizedBox(height: 10,),
+
+
+        // Text(
+        //   text,
+        //   style: TextStyle(
+        //           color: color ?? Theme.of(context).textTheme.bodyMedium?.color,
+        //           fontSize: fontSize ?? Theme.of(context).textTheme.bodyMedium?.fontSize,
+        //           fontWeight: fontWeight ??  Theme.of(context).textTheme.bodyMedium?.fontWeight)
+        //       .merge(style),
+        // ),
         ReusableTextFormField(
           enabled: true,
           controller: controller,

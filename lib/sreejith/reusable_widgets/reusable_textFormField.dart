@@ -36,7 +36,8 @@ class ReusableTextFormField extends StatelessWidget {
     this.borderColor,
     this.keyboardType,
     this.inputFormatters,
-    this.IsEditable = true,
+    this.IsEditable = true, 
+    // this.style,
   });
 
   final bool? IsEditable;
@@ -73,26 +74,31 @@ class ReusableTextFormField extends StatelessWidget {
   final Color? borderColor;
   final TextInputType? keyboardType;
   final List<TextInputFormatter>? inputFormatters;
+  // final TextStyle? style;
 
   @override
   Widget build(BuildContext context) {
-    return
-        TextFormField(
-          
+    return TextFormField(
+      style: TextStyle(
+        fontSize: fontSize ?? Theme.of(context).textTheme.titleSmall?.fontSize,
+        fontWeight: fontWeight ?? Theme.of(context).textTheme.titleSmall?.fontWeight,
+      ),
       controller: controller,
-      keyboardType: keyboardType ?? TextInputType.emailAddress,
-      inputFormatters: inputFormatters,
+      // keyboardType: keyboardType ?? TextInputType.emailAddress,
+      // inputFormatters: inputFormatters,
       validator: validator,
       obscureText: obsecureText ?? false,
       obscuringCharacter: obscuringCharacter ?? "*",
       decoration: InputDecoration(
-        
-        hintText: hintText ?? "",
+        hintText: hintText,
         hintStyle: TextStyle(
-                color: color ?? Theme.of(context).textTheme.displaySmall?.color,
-                fontSize: fontSize ?? 15,
-                fontWeight: fontWeight ?? FontWeight.normal)
-            .merge(hintStyle),
+            color: color ?? Theme.of(context).textTheme.labelSmall?.color,
+            fontSize:
+                fontSize ?? Theme.of(context).textTheme.labelSmall?.fontSize,
+            fontWeight: fontWeight ??
+                Theme.of(context).textTheme.labelSmall?.fontWeight)
+        // .merge(hintStyle)
+        ,
         suffix: Text(suffix ?? " "),
         suffixIcon: suffixIcon,
         prefix: Text(prefix ?? ""),
@@ -100,7 +106,9 @@ class ReusableTextFormField extends StatelessWidget {
         filled: filled ?? false,
         fillColor: filledColor,
         border: border ??
-            OutlineInputBorder(borderRadius: BorderRadius.circular(5)),
+            OutlineInputBorder(
+              borderSide: BorderSide(color : Theme.of(context).secondaryHeaderColor),
+              borderRadius: BorderRadius.circular(5)),
         alignLabelWithHint: alignLabelWithHint,
         constraints: constraints,
         contentPadding: contentPadding,
