@@ -1,64 +1,68 @@
 import 'package:flutter/material.dart';
+import 'package:nexteons_widgets/sajin/text/custom_text.dart';
 
 class CustomOutlineButton extends StatelessWidget {
   final IconData? icon;
   final double? iconSize;
   final Color? iconColor;
-  final double? height;
-  final double? width;
+
   final VoidCallback? onPressed;
   final String? buttonText;
   final double? textFontSize;
   final Color? textColor;
+  final FontWeight? textFontWeight;
 
   const CustomOutlineButton(
       {super.key,
       this.icon,
       this.iconSize,
       this.iconColor,
-      this.height,
-      this.width,
       this.onPressed,
       this.buttonText,
       this.textFontSize,
-      this.textColor}): assert(icon != null || buttonText != null, 'At least one value (icon or buttonText) must be provided.');
+      this.textColor, this.textFontWeight})
+      : assert(icon != null || buttonText != null,
+            'At least one value (icon or buttonText) must be provided.');
 
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
-    return SizedBox(
-      width: width,
-      height: height,
-      child: OutlinedButton(
-        onPressed: onPressed,
-        style: ButtonStyle(
-          shape: WidgetStateProperty.all<RoundedRectangleBorder>(
-            RoundedRectangleBorder(side: BorderSide(color: Colors.black,width: 5, ),
-              borderRadius: BorderRadius.circular(
-                  6.0), // Rectangular shape with rounded corners
+    return OutlinedButton(
+      onPressed: onPressed,
+      style: ButtonStyle(
+        padding: WidgetStateProperty.all(
+            EdgeInsets.symmetric(horizontal: 15, vertical: 5)),
+        shape: WidgetStateProperty.all<RoundedRectangleBorder>(
+          RoundedRectangleBorder(
+            side: BorderSide(
+              color: Colors.black,
+              width: 5,
             ),
+            borderRadius: BorderRadius.circular(
+                6.0), // Rectangular shape with rounded corners
           ),
         ),
-        child: Row(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            if (icon != null)
-              Icon(
-                icon,
-                size: iconSize,
-                color: iconColor??Theme.of(context).iconTheme.color,
-              ),
-            if (icon != null && buttonText != null)
-              SizedBox(width: size.width * 0.03),
-            if (buttonText != null)
-              Text(
-                buttonText ?? "",
-                style: TextStyle(
-                    fontSize: textFontSize,
-                    color: textColor ?? Theme.of(context).textTheme.bodyLarge?.color),
-              ),
-          ],
-        ),
+      ),
+      child: Row(
+        mainAxisSize: MainAxisSize.min,  ///IF THERE is any issue in button calling in login screen commenet this line 
+        children: [
+          if (icon != null)
+            Icon(
+              icon,
+              size: iconSize ?? Theme.of(context).primaryIconTheme.size,
+              color: iconColor ?? Theme.of(context).primaryIconTheme.color,
+            ),
+          if (icon != null && buttonText != null)
+            SizedBox(width: size.width * 0.02),
+          if (buttonText != null)
+            FittedBox(
+                child: CustomText(
+              text: buttonText,
+              fontSize:textFontSize ??Theme.of(context).textTheme.titleMedium?.fontSize,
+              fontWeight:textFontWeight ??Theme.of(context).textTheme.titleMedium?.fontWeight,
+              textColor:textColor ??Theme.of(context).textTheme.titleMedium?.color,
+            )),
+        ],
       ),
     );
   }
