@@ -20,8 +20,10 @@ class MyApp extends StatelessWidget {
             bodyLarge: TextStyle().headerText, // Default text color
             bodyMedium: TextStyle().buttonText,
             bodySmall: TextStyle().textFieldText,
-            labelSmall: TextStyle().textf,
-            labelMedium: TextStyle().texthed),
+           
+            labelSmall: TextStyle().textf,  ///for text content inside textformfield Size = 15,weight = normal
+            labelMedium: TextStyle().texthed), /// for text content inside textform size = 16 , weiht = w700
+       
         primaryColor: Color(0xFF2164B0),
         primaryColorDark: Colors.black,
         secondaryHeaderColor: Color(0xFFCBCBCB),

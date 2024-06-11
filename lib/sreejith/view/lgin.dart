@@ -3,6 +3,7 @@ import 'package:nexteons_widgets/sajin/buttons/filled%20_button.dart';
 import 'package:nexteons_widgets/sajin/buttons/text_button.dart';
 import 'package:nexteons_widgets/sajin/text/custom_text.dart';
 import 'package:nexteons_widgets/sreejith/reusable_widgets/reusable_loginfield.dart';
+import 'package:nexteons_widgets/sreejith/reusable_widgets/reusable_textFormField.dart';
 
 class LoginScreen extends StatelessWidget {
   LoginScreen({super.key});
@@ -22,7 +23,7 @@ class LoginScreen extends StatelessWidget {
           Container(
             height: size.height,
             width: 600,
-            color: Colors.blue,
+            color: Color(0xFFE3F3FF),
           ),
       
           ///main container for login and email textformfield
@@ -81,6 +82,10 @@ class LoginScreen extends StatelessWidget {
                     controller: pcontroller,
                     text: "Password",
                     hintText: "Password",
+                    hintcolor: Colors.grey ,
+                   
+                   
+                    
                   ),
       
                   ///need to change as gap
@@ -100,7 +105,8 @@ class LoginScreen extends StatelessWidget {
                   SizedBox(
                     height: 20,
                   ),
-      
+
+
                   Spacer(),
       
                   Row(

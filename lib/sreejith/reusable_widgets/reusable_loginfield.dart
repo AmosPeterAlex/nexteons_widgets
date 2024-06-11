@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:nexteons_widgets/sajin/text/custom_text.dart';
 import 'package:nexteons_widgets/sreejith/reusable_widgets/reusable_textFormField.dart';
 
-
 class ReusableLoginTextField extends StatelessWidget {
   ReusableLoginTextField(
       {super.key,
@@ -12,7 +11,8 @@ class ReusableLoginTextField extends StatelessWidget {
       this.color,
       this.fontSize,
       this.fontWeight,
-      this.style});
+      this.style,
+      this.hintcolor});
 
   final String text;
   final TextEditingController? controller;
@@ -21,6 +21,7 @@ class ReusableLoginTextField extends StatelessWidget {
   final double? fontSize;
   final FontWeight? fontWeight;
   final TextStyle? style;
+  final Color? hintcolor;
 
   @override
   Widget build(BuildContext context) {
@@ -28,21 +29,22 @@ class ReusableLoginTextField extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-
         CustomText(
           text: text,
           style: TextStyle(
-                  color: color ?? Theme.of(context).textTheme.labelMedium?.color,
-                  fontSize: fontSize ?? Theme.of(context).textTheme.labelMedium?.fontSize,
-                  fontWeight: fontWeight ??  Theme.of(context).textTheme.labelMedium?.fontWeight)
+                  color:
+                      color ?? Theme.of(context).textTheme.labelMedium?.color,
+                  fontSize: fontSize ??
+                      Theme.of(context).textTheme.labelMedium?.fontSize,
+                  fontWeight: fontWeight ??
+                      Theme.of(context).textTheme.labelMedium?.fontWeight)
               .merge(style),
-
         ),
 
-
         ///need to do gap
-        SizedBox(height: 10,),
-
+        SizedBox(
+          height: 10,
+        ),
 
         // Text(
         //   text,
@@ -56,7 +58,9 @@ class ReusableLoginTextField extends StatelessWidget {
           enabled: true,
           controller: controller,
           hintText: hintText,
-          hintStyle: TextStyle(color: color ?? Theme.of(context).textTheme.displaySmall?.color),
+          hintStyle: TextStyle(
+              color:
+                  hintcolor ?? Theme.of(context).textTheme.labelMedium?.color),
         )
       ],
     );
