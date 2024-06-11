@@ -1,29 +1,40 @@
 import 'package:flutter/material.dart';
+import 'package:nexteons_widgets/sajin/buttons/filled%20_button.dart';
 import 'package:nexteons_widgets/sreejith/reusable_widgets/reusable_loginfield.dart';
 import 'package:nexteons_widgets/sreejith/reusable_widgets/reusable_textFormField.dart';
-import 'package:nexteons_widgets/sreejith/samblebuttons/filledbutt.dart';
 
 class RefactorViews extends StatelessWidget {
   const RefactorViews({super.key});
 
   @override
   Widget build(BuildContext context) {
+    var firstcontroller = TextEditingController();
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
           children: [
-            ReusableTextFormField(
-              hintText: "Bank Name",
-              hintStyle: TextStyle(fontSize: 23,color: Colors.black),
-              border:
-                  OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
+            SizedBox(
+              width: double.infinity,
+              child: ReusableTextFormField(
+                enabled: false,
+                filled: true,
+                filledColor: Colors.grey,
+                controller: firstcontroller,
+                IsEditable: true,
+                hintText: "Bank Name",
+                hintStyle: TextStyle(
+                  fontSize: 15,
+                ),
+                contentPadding: EdgeInsets.zero,
+              ),
             ),
             SizedBox(
               height: 20,
             ),
             ReusableTextFormField(
+              IsEditable: true,
               hintText: "BranchCode",
-              hintStyle: TextStyle(color: Colors.black),
+
               suffixIcon: Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: CustomFilledButton(
@@ -34,14 +45,25 @@ class RefactorViews extends StatelessWidget {
               ),
             ),
 
-
-            ReusableLoginTextField(text: 'Full Name',),
+            ReusableLoginTextField(text: 'Full Name',
+            // hintText: "email",
+            ),
 
             SizedBox(height: 20,),
 
-            ReusableLoginTextField(text: 'email',
+            ReusableLoginTextField(
+              
+              text: 'email',
             hintText: "email",
-            )
+            ),
+
+ SizedBox(height: 20,),
+
+             ReusableTextFormField(
+      hintText: "This can be editable",
+              IsEditable: false,
+
+             )
           ],
         ),
       ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nexteons_widgets/sajin/utils/const.dart';
 import 'package:nexteons_widgets/sreejith/view/view.dart';
 
 void main() {
@@ -13,12 +14,18 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
-        primaryColor:  Colors.blue,
-         primaryColorDark: Colors.black,
+
+        textTheme: TextTheme(
+          bodyLarge: TextStyle().headerText, // Default text color
+        bodyMedium: TextStyle().buttonText,
+        bodySmall: TextStyle().textFieldText 
+        ),
+
+        primaryColor: Colors.blue,
+        primaryColorDark: Colors.black,
         hintColor: Colors.grey,
-      
-        // colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        // useMaterial3: true,
+       
+        
       ),
       home: const RefactorViews(),
     );
