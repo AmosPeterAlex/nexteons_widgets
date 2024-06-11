@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gap/gap.dart';
 
 class RoundedCheckbox extends StatefulWidget {
   final bool initialValue;
@@ -33,10 +34,25 @@ class _RoundedCheckboxState extends State<RoundedCheckbox> {
       },
       child: Row(
         children: [
-          // Checkbox(
-          //   value: isChecked,
-          //   onChanged: (value) {},
-          // ),
+          //what to give on mouse cursor
+          Checkbox(
+            value: isChecked,
+            onChanged: (value) {
+              isChecked = !isChecked;
+              setState(() {});
+            },
+            activeColor: Colors.white,
+            checkColor: Colors.black,
+            side: WidgetStateBorderSide.resolveWith(
+              (states) {
+                return BorderSide(color: Colors.grey, width: 1.5);
+              },
+            ),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(3),
+            ),
+          ),
+          //dont know which is btr-------depends on tick
           Container(
             //value evde kodukeno
             width: 24,
@@ -57,7 +73,7 @@ class _RoundedCheckboxState extends State<RoundedCheckbox> {
                 : null,
           ),
           //text widget should show only of the value of text !=null
-          if (widget.text != null) ...[SizedBox(width: 15), Text(widget.text!)]
+          if (widget.text != null) ...[Gap(15), Text(widget.text!)]
         ],
       ),
     );
