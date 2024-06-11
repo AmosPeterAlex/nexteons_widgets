@@ -18,7 +18,9 @@ void main() {
         bodySmall: TextStyle().textFieldText // Secondary text color
       ),
       iconTheme: IconThemeData(
-        color: Colors.black, // Default icon color
+        color: Colors.black, 
+        size: 15
+        // Default icon color
       ),
     ),
     home: SajinHomeScreen(),
@@ -37,27 +39,37 @@ class SajinHomeScreen extends StatelessWidget {
             SizedBox(
               height: 100,
             ),
-            CustomFilledButton(
-              buttonText: "save",
+            SizedBox(
               height: 50,
               width: 200,
-              textFontSize: 20,
+              child: CustomFilledButton(
+                buttonText: "save",
+               
+                textFontSize: 20,
+              ),
             ),
             SizedBox(
               height: 10,
             ),
-            CustomFilledButton(
-              buttonText: "save",
-              height: 50,
+            SizedBox(
+                height: 50,
               width: 200,
-              textFontSize: 20,
-              icon: Icons.add,
+              child: CustomFilledButton(
+                buttonText: "save",
+              
+                textFontSize: 20,
+                icon: Icons.add,
+              ),
             ),
             SizedBox(
               height: 10,
             ),
-            CustomFilledButton(
-              icon: Icons.add_a_photo,
+            SizedBox(
+              height: 25,
+              // width: 25,
+              child: CustomFilledButton(
+                icon: Icons.add,
+              ),
             ),
             SizedBox(
               height: 10,
@@ -91,7 +103,10 @@ class SajinHomeScreen extends StatelessWidget {
             ),
             CustomText(
               text: "welcome back!",
-              style: TextStyle(),
+              fontSize: Theme.of(context).textTheme.bodyLarge?.fontSize,
+              fontWeight: Theme.of(context).textTheme.bodyLarge?.fontWeight,
+              textColor: Theme.of(context).textTheme.bodyLarge?.color,
+              
             ),
             SizedBox(
               height: 10,
