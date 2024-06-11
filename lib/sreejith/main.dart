@@ -13,20 +13,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData(
-
-        textTheme: TextTheme(
-          bodyLarge: TextStyle().headerText, // Default text color
-        bodyMedium: TextStyle().buttonText,
-        bodySmall: TextStyle().textFieldText 
-        ),
-
+      theme: ThemeData(textTheme: TextTheme(
+            bodyLarge: TextStyle().headerText, // Default text color
+            bodyMedium: TextStyle().buttonText,
+            bodySmall: TextStyle().textFieldText),
         primaryColor: Colors.blue,
         primaryColorDark: Colors.black,
-        hintColor: Colors.grey,
-       
-        
-      ),
+        hintColor: Colors.grey,),
       home: const RefactorViews(),
     );
   }
