@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:nexteons_widgets/amos/new.dart';
-import 'package:nexteons_widgets/amos/new2.dart';
+import 'package:gap/gap.dart';
+import 'package:nexteons_widgets/amos/checkbox_widget.dart';
+import 'package:nexteons_widgets/amos/group_switching_button.dart';
 import 'package:nexteons_widgets/amos/scrollbar_widget.dart';
+import 'scrollbar_without_color.dart';
 
 //just a sample page to view scrollbar
 class SamplePage extends StatefulWidget {
@@ -33,17 +35,39 @@ class _SamplePageState extends State<SamplePage> {
                   children: [
                     Wrap(
                       children: [
-                        Radio(
-                          value: 1,
-                          groupValue: 1,
-                          onChanged: (value) {},
-                        ),
+                        // Radio(
+                        //   value: 1,
+                        //   groupValue: 1,
+                        //   onChanged: (value) {},
+                        // ),
                         const Text(
                           'Branch Access',
                           style: TextStyle(
                             fontSize: 18,
                             fontWeight: FontWeight.bold,
                           ),
+                        ),
+                        SizedBox(
+                          width: 10,
+                        ),
+                        GroupSwitchingWidget(
+                          values: [
+                            "1",
+                            "ab",
+                            "alc",
+                            "abe",
+                            "1",
+                            "1h",
+                            "1",
+                          ],
+
+                        ),
+                        SizedBox(
+                          width: 10,
+                        ),
+                        RoundedCheckbox(
+                          initialValue: false,
+                          text: "TICK",
                         )
                       ],
                     ),
@@ -57,63 +81,50 @@ class _SamplePageState extends State<SamplePage> {
                   padding: const EdgeInsets.symmetric(
                       horizontal: 10.0, vertical: 20),
                   //custom scroll bar
-                  child: ScrollbarTheme(
-                    data: ScrollbarThemeData(
-                        thumbColor: WidgetStatePropertyAll(
-                            Theme.of(context).highlightColor),
-                        trackColor: WidgetStatePropertyAll(
-                            Theme.of(context).disabledColor)),
-                    child: MyScrollbar(
-                      trackRadius: Radius.circular(12),
-                      thumbVisibility: true,
-                      interactive: false,
-                      trackVisibility: true,
-                      child: GridView.builder(
-                        padding: const EdgeInsets.symmetric(horizontal: 10.0),
-                        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                          crossAxisCount: 3,
-                          mainAxisSpacing: 10,
-                          crossAxisSpacing: 10,
-                          childAspectRatio: 5,
-                        ),
-                        itemCount: 30,
-                        itemBuilder: (context, index) {
-                          int branchNumber = index + 1;
-                          return Row(
-                            children: [
-                              Radio<int>(
-                                value: branchNumber,
-                                groupValue: _selectedBranch,
-                                onChanged: (value) {
-                                  setState(() {
-                                    _selectedBranch = value;
-                                  });
-                                },
-                                fillColor:
-                                    WidgetStateProperty.resolveWith<Color>(
-                                  (Set<WidgetState> states) {
-                                    if (states.contains(WidgetState.selected)) {
-                                      return Colors.blue;
-                                    }
-                                    return Colors.grey;
-                                  },
-                                ),
-                              ),
-                              Text(
-                                '$branchNumber - Default Branch',
-                                style: TextStyle(fontSize: 16),
-                              ),
-                            ],
-                          );
-                        },
+                  child: MyScrollBarWidget(
+                    //track color and thumb color refractor akumbole kodukam
+                    child: GridView.builder(
+                      padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                        crossAxisCount: 3,
+                        mainAxisSpacing: 8,
+                        crossAxisSpacing: 8,
+                        childAspectRatio: 5,
                       ),
+                      itemCount: 100,
+                      itemBuilder: (context, index) {
+                        int branchNumber = index + 1;
+                        return Row(
+                          children: [
+                            Radio<int>(
+                              value: branchNumber,
+                              groupValue: _selectedBranch,
+                              onChanged: (value) {
+                                setState(() {
+                                  _selectedBranch = value;
+                                });
+                              },
+                              fillColor: WidgetStateProperty.resolveWith<Color>(
+                                (Set<WidgetState> states) {
+                                  if (states.contains(WidgetState.selected)) {
+                                    return Colors.blue;
+                                  }
+                                  return Colors.grey;
+                                },
+                              ),
+                            ),
+                            Text(
+                              '$branchNumber - Default Branch',
+                              style: TextStyle(fontSize: 16),
+                            ),
+                          ],
+                        );
+                      },
                     ),
                   ),
                 ),
               ),
-              SizedBox(
-                height: 25,
-              ),
+             Gap(25),
               Wrap(
                 children: [
                   //mate project ile buttons add akenm
