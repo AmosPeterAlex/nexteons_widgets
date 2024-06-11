@@ -35,6 +35,7 @@ class CustomFilledButton extends StatelessWidget {
     return SizedBox(
       width: width,
       height: height,      child: FilledButton(
+    
         style: ButtonStyle(
           backgroundColor: buttonColor ??
               WidgetStateProperty.all<Color>(Theme.of(context).primaryColor),
