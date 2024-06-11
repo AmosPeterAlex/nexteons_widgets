@@ -10,8 +10,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: SamplePage(),
+      theme: ThemeData(
+        primaryColor: const Color(0XFF5570F1),
+        highlightColor: const Color(0XFF838383), //thumb color
+        disabledColor: const Color(0XFFD9D9D9), //track color
+      ),
       debugShowCheckedModeBanner: false,
     );
   }
 }
-

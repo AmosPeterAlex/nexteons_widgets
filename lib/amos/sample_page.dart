@@ -13,7 +13,7 @@ class _SamplePageState extends State<SamplePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: Colors.black, //no need
       body: Center(
         child: Container(
           width: 600,
@@ -54,44 +54,53 @@ class _SamplePageState extends State<SamplePage> {
                 child: Padding(
                   padding: const EdgeInsets.symmetric(
                       horizontal: 10.0, vertical: 20),
-                  child: ScrollBarWidget(
-                    child: GridView.builder(
-                      padding: const EdgeInsets.symmetric(horizontal: 10.0),
-                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                        crossAxisCount: 3,
-                        mainAxisSpacing: 10,
-                        crossAxisSpacing: 10,
-                        childAspectRatio: 5,
-                      ),
-                      itemCount: 30,
-                      itemBuilder: (context, index) {
-                        int branchNumber = index + 1;
-                        return Row(
-                          children: [
-                            Radio<int>(
-                              value: branchNumber,
-                              groupValue: _selectedBranch,
-                              onChanged: (value) {
-                                setState(() {
-                                  _selectedBranch = value;
-                                });
-                              },
-                              fillColor: WidgetStateProperty.resolveWith<Color>(
-                                (Set<WidgetState> states) {
-                                  if (states.contains(WidgetState.selected)) {
-                                    return Colors.blue;
-                                  }
-                                  return Colors.grey;
+                  //custom scroll bar
+                  child: ScrollbarTheme(
+                    data: ScrollbarThemeData(
+                        thumbColor: WidgetStatePropertyAll(
+                            Theme.of(context).highlightColor),
+                        trackColor: WidgetStatePropertyAll(
+                            Theme.of(context).disabledColor)),
+                    child: ScrollBarWidget(
+                      child: GridView.builder(
+                        padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                          crossAxisCount: 3,
+                          mainAxisSpacing: 10,
+                          crossAxisSpacing: 10,
+                          childAspectRatio: 5,
+                        ),
+                        itemCount: 30,
+                        itemBuilder: (context, index) {
+                          int branchNumber = index + 1;
+                          return Row(
+                            children: [
+                              Radio<int>(
+                                value: branchNumber,
+                                groupValue: _selectedBranch,
+                                onChanged: (value) {
+                                  setState(() {
+                                    _selectedBranch = value;
+                                  });
                                 },
+                                fillColor:
+                                    WidgetStateProperty.resolveWith<Color>(
+                                  (Set<WidgetState> states) {
+                                    if (states.contains(WidgetState.selected)) {
+                                      return Colors.blue;
+                                    }
+                                    return Colors.grey;
+                                  },
+                                ),
                               ),
-                            ),
-                            Text(
-                              '$branchNumber - Default Branch',
-                              style: TextStyle(fontSize: 16),
-                            ),
-                          ],
-                        );
-                      },
+                              Text(
+                                '$branchNumber - Default Branch',
+                                style: TextStyle(fontSize: 16),
+                              ),
+                            ],
+                          );
+                        },
+                      ),
                     ),
                   ),
                 ),

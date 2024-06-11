@@ -3,26 +3,41 @@ import 'package:flutter/material.dart';
 //custom widget
 
 class ScrollBarWidget extends StatelessWidget {
- final Widget child;
+  final Widget child;
 
   const ScrollBarWidget({super.key, required this.child});
   @override
   Widget build(BuildContext context) {
-   
-    return ScrollbarTheme(
-      data: ScrollbarThemeData(
-        radius: Radius.circular(15),
-        trackBorderColor: WidgetStatePropertyAll(Colors.blueGrey),
-        thickness: WidgetStatePropertyAll(12),
-        thumbColor: WidgetStatePropertyAll(Colors.grey[600]),
-        trackColor: WidgetStateProperty.all(Colors.grey[300]),
-        trackVisibility: WidgetStateProperty.all(true),
-        thumbVisibility: WidgetStateProperty.all(true),
-      ),
-      child: Scrollbar(
-        interactive: false,
-        child: child,
-      ),
+    // return RawScrollbar(trackBorderColor: Colors.amber,
+    //   trackRadius: Radius.circular(15)
+    //   ,child: child);
+    return Scrollbar(
+      radius: Radius.circular(12),
+      thumbVisibility: true,
+      trackVisibility: false,
+      interactive: false,
+      // thickness: 12,F
+      child: child,
     );
   }
 }
+/*
+---track
+FIGMA DESIGN
+width: 22px;
+height: 474px;
+top: 106px;
+left: 1006px;
+gap: 0px;
+border-radius: 8px 0px 0px 0px;
+opacity: 0px;
+-----inner thumb
+width: 14px;
+height: 101px;
+top: 111px;
+left: 1010px;
+gap: 0px;
+border-radius: 8px 0px 0px 0px;
+opacity: 0px;
+
+*/
