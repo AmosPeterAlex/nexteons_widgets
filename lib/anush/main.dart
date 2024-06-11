@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:nexteons_widgets/anush/response/view.dart';
+import 'view.dart';
 
 void main(){
   runApp(
@@ -14,6 +14,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return  MaterialApp(
       debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        primaryColor: Colors.blue.shade800
+      ),
       home: MyDataGridPage(),
     );
   }
