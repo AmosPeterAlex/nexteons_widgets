@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:nexteons_widgets/amos/scrollbar_widget.dart';
 
+//just a sample page to view scrollbar
 class SamplePage extends StatefulWidget {
   @override
   _SamplePageState createState() => _SamplePageState();
@@ -52,57 +54,44 @@ class _SamplePageState extends State<SamplePage> {
                 child: Padding(
                   padding: const EdgeInsets.symmetric(
                       horizontal: 10.0, vertical: 20),
-                  child: ScrollbarTheme(
-                    data: ScrollbarThemeData(
-                      radius: Radius.circular(15),
-                      trackBorderColor: WidgetStatePropertyAll(Colors.blueGrey),
-                      thickness: WidgetStatePropertyAll(12),
-                      thumbColor: WidgetStatePropertyAll(Colors.grey[600]),
-                      trackColor: WidgetStateProperty.all(Colors.grey[300]),
-                      trackVisibility: WidgetStateProperty.all(true),
-                      thumbVisibility: WidgetStateProperty.all(true),
-                    ),
-                    child: Scrollbar(
-                      interactive: false,
-                      child: GridView.builder(
-                        padding: const EdgeInsets.symmetric(horizontal: 10.0),
-                        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                          crossAxisCount: 3,
-                          mainAxisSpacing: 10,
-                          crossAxisSpacing: 10,
-                          childAspectRatio: 5,
-                        ),
-                        itemCount: 30,
-                        itemBuilder: (context, index) {
-                          int branchNumber = index + 1;
-                          return Row(
-                            children: [
-                              Radio<int>(
-                                value: branchNumber,
-                                groupValue: _selectedBranch,
-                                onChanged: (value) {
-                                  setState(() {
-                                    _selectedBranch = value;
-                                  });
-                                },
-                                fillColor:
-                                    WidgetStateProperty.resolveWith<Color>(
-                                  (Set<WidgetState> states) {
-                                    if (states.contains(WidgetState.selected)) {
-                                      return Colors.blue;
-                                    }
-                                    return Colors.grey;
-                                  },
-                                ),
-                              ),
-                              Text(
-                                '$branchNumber - Default Branch',
-                                style: TextStyle(fontSize: 16),
-                              ),
-                            ],
-                          );
-                        },
+                  child: ScrollBarWidget(
+                    child: GridView.builder(
+                      padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                        crossAxisCount: 3,
+                        mainAxisSpacing: 10,
+                        crossAxisSpacing: 10,
+                        childAspectRatio: 5,
                       ),
+                      itemCount: 30,
+                      itemBuilder: (context, index) {
+                        int branchNumber = index + 1;
+                        return Row(
+                          children: [
+                            Radio<int>(
+                              value: branchNumber,
+                              groupValue: _selectedBranch,
+                              onChanged: (value) {
+                                setState(() {
+                                  _selectedBranch = value;
+                                });
+                              },
+                              fillColor: WidgetStateProperty.resolveWith<Color>(
+                                (Set<WidgetState> states) {
+                                  if (states.contains(WidgetState.selected)) {
+                                    return Colors.blue;
+                                  }
+                                  return Colors.grey;
+                                },
+                              ),
+                            ),
+                            Text(
+                              '$branchNumber - Default Branch',
+                              style: TextStyle(fontSize: 16),
+                            ),
+                          ],
+                        );
+                      },
                     ),
                   ),
                 ),

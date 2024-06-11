@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
 
+//custom widget
+
 class ScrollBarWidget extends StatelessWidget {
+ final Widget child;
+
+  const ScrollBarWidget({super.key, required this.child});
   @override
   Widget build(BuildContext context) {
-    Widget? child;
+   
     return ScrollbarTheme(
       data: ScrollbarThemeData(
         radius: Radius.circular(15),
@@ -16,7 +21,7 @@ class ScrollBarWidget extends StatelessWidget {
       ),
       child: Scrollbar(
         interactive: false,
-        child: child!,
+        child: child,
       ),
     );
   }
