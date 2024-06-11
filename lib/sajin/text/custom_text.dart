@@ -17,20 +17,18 @@ class CustomText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      onTap: () {},
-      child: Text(
-        text ?? "",
-        style: TextStyle(
-                color:
-                    textColor ?? Theme.of(context).textTheme.bodyMedium?.color,
-                fontSize: fontSize ?? 16,
-                fontWeight: fontWeight ?? FontWeight.w700)
-            .merge(style),
-      ),
+    return Text(
+      text ?? "",
+      style: TextStyle(
+              color:
+                  textColor ,
+              fontSize: fontSize ,
+              fontWeight: fontWeight )
+          .merge(style),
     );
 
     /// google fonts add akan ondu and enniyum parameters add akan ondu
     ///
   }
 }
+
