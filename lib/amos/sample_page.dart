@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:nexteons_widgets/amos/sample/ai_widget.dart';
+import 'package:nexteons_widgets/amos/new.dart';
+import 'package:nexteons_widgets/amos/new2.dart';
 import 'package:nexteons_widgets/amos/scrollbar_widget.dart';
 
 //just a sample page to view scrollbar
@@ -62,7 +63,11 @@ class _SamplePageState extends State<SamplePage> {
                             Theme.of(context).highlightColor),
                         trackColor: WidgetStatePropertyAll(
                             Theme.of(context).disabledColor)),
-                    child: ScrollBarWidget1(
+                    child: MyScrollbar(
+                      trackRadius: Radius.circular(12),
+                      thumbVisibility: true,
+                      interactive: false,
+                      trackVisibility: true,
                       child: GridView.builder(
                         padding: const EdgeInsets.symmetric(horizontal: 10.0),
                         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(

@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 
 //custom widget
 
-class ScrollBarWidget extends StatelessWidget {
+class MyScrollBarWidget extends StatelessWidget {
   final Widget child;
 
-  const ScrollBarWidget({super.key, required this.child});
+  const MyScrollBarWidget({super.key, required this.child});
   @override
   Widget build(BuildContext context) {
     // return RawScrollbar(trackBorderColor: Colors.amber,
