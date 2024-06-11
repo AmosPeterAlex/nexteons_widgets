@@ -32,18 +32,20 @@ class CustomFilledButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
-    return FilledButton(
-      style: ButtonStyle(
-        backgroundColor: buttonColor ??
-            WidgetStateProperty.all<Color>(Theme.of(context).primaryColor),
-        shape: WidgetStateProperty.all<RoundedRectangleBorder>(
-          RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(
-                6.0), // Rectangular shape with rounded corners
+    return SizedBox(
+      width: width,
+      height: height,      child: FilledButton(
+        style: ButtonStyle(
+          backgroundColor: buttonColor ??
+              WidgetStateProperty.all<Color>(Theme.of(context).primaryColor),
+          shape: WidgetStateProperty.all<RoundedRectangleBorder>(
+            RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(
+                  6.0), // Rectangular shape with rounded corners
+            ),
           ),
-        ),
-      ).merge(style),
-      // .merge chetythal style il ulla all property avidey kittum
+        ).merge(style),
+        // .merge chetythal style il ulla all property avidey kittum
 
         onPressed: onPressed,
         child: Row(
@@ -53,7 +55,7 @@ class CustomFilledButton extends StatelessWidget {
               Icon(
                 icon,
                 size: iconSize??16,
-                color: iconColor??Theme.of(context).iconTheme.color,
+                color: iconColor??Theme.of(context).primaryColorLight,
               ),
             if (icon != null && buttonText != null)
               SizedBox(width: size.width * .02), // Space between icon and text
@@ -61,7 +63,7 @@ class CustomFilledButton extends StatelessWidget {
               FittedBox(
                 child: Text(
                   buttonText ??"",
-                  style: TextStyle(fontSize: textFontSize??16, color: textColor??Theme.of(context).textTheme.bodyLarge?.color),
+                  style: TextStyle(fontSize: textFontSize??16, color: textColor??Theme.of(context).primaryColorLight),
                 ),
               ),
           ],
