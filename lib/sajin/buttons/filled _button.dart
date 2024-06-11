@@ -34,8 +34,7 @@ class CustomFilledButton extends StatelessWidget {
     var size = MediaQuery.of(context).size;
     return SizedBox(
       width: width,
-      height: height,
-      child: FilledButton(
+      height: height,      child: FilledButton(
         style: ButtonStyle(
           backgroundColor: buttonColor ??
               WidgetStateProperty.all<Color>(Theme.of(context).primaryColor),
