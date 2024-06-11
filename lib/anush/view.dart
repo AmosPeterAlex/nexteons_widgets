@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:nexteons_widgets/anush/data_grid/datagrid.dart';
+import 'package:nexteons_widgets/anush/enum_buttonlist/enum_buttonlist.dart';
+import 'package:nexteons_widgets/anush/utils/buttons_enum.dart';
 import 'package:nexteons_widgets/sajin/buttons/filled%20_button.dart';
 import 'package:nexteons_widgets/sajin/buttons/icon_button.dart';
 import 'package:nexteons_widgets/sajin/buttons/outline_button.dart';
@@ -27,7 +29,7 @@ class _MyDataGridPageState extends State<MyDataGridPage> {
         appBar: AppBar(
           backgroundColor: Colors.blue,
           toolbarHeight: 150,
-          title: Text("APP BAR"),
+          title: Text("AppBar"),
           centerTitle: true,
         ),
         body: Container(
@@ -38,9 +40,19 @@ class _MyDataGridPageState extends State<MyDataGridPage> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
-                    "SALES RECEIPT",
-                    style: TextStyle(fontSize: 25, fontWeight: FontWeight.w700),
+                  Row(
+                    children: [
+                      Text(
+                        "SALES RECEIPT",
+                        style: TextStyle(fontSize: 25, fontWeight: FontWeight.w700),
+                      ),
+                      Spacer(),
+                      CustomEnumButtonsRow(onPressed: () => print("Custom Enum button Pressed"),additionalButtons: [
+                        ImageButton.barcode,
+                        ImageButton.print,
+                        ImageButton.deviceReset,
+                      ],),
+                    ],
                   ),
                   Gap(25),
                   Container(
@@ -95,7 +107,7 @@ class _MyDataGridPageState extends State<MyDataGridPage> {
                         CustomDataGrid(),
 
                         ///
-                        Gap(22),
+                        Gap(15),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                             crossAxisAlignment: CrossAxisAlignment.center,
@@ -150,9 +162,9 @@ class _MyDataGridPageState extends State<MyDataGridPage> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            CustomFilledButton(icon: Icons.add,buttonText: "NEW ACCOUNT GROUP",),
+                            CustomFilledButton(icon: Icons.add,buttonText: "NEW ACCOUNT GROUP",iconColor: Colors.white,textColor: Colors.white,),
                             Gap(15),
-                            CustomFilledButton(icon: Icons.add,buttonText: "NEW ACCOUNT",textFontSize: 16,),
+                            CustomFilledButton(icon: Icons.add,buttonText: "NEW ACCOUNT",textFontSize: 16, textColor: Colors.white,iconColor: Colors.white,),
 
                           ],
                         )

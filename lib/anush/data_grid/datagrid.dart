@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_datagrid/datagrid.dart';
 
+import '../utils/customer_model.dart';
+
 class CustomDataGrid extends StatefulWidget {
   const CustomDataGrid({
     super.key,
@@ -51,7 +53,7 @@ class _CustomDataGridState extends State<CustomDataGrid> {
                   padding: EdgeInsets.all(8.0),
                   alignment: Alignment.center,
                   color: Colors.white,
-                  child: Text('Payment Method', style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20)))),
+                  child: Text('Payment Method', style: TextStyle(fontWeight: FontWeight.bold,fontSize:20)))),
           GridColumn(
               columnName: 'Account',
               label: Container(
@@ -164,13 +166,4 @@ class CustomerDataSource extends DataGridSource {
 
 
 ///model class
-class Customer {
-  Customer(this.customerName, this.paymentMethod, this.account, this.currency, this.exchangeRate, this.totalAmount);
 
-  final String customerName;
-  final String paymentMethod;
-  final String account;
-  final String currency;
-  final double exchangeRate;
-  final double totalAmount;
-}
