@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:nexteons_widgets/sajin/utils/const.dart';
 import 'package:nexteons_widgets/sreejith/utils/constants.dart';
+import 'package:nexteons_widgets/sreejith/view/customer_general.dart';
 import 'package:nexteons_widgets/sreejith/view/lgin.dart';
+import 'package:nexteons_widgets/sreejith/view/view.dart';
 
 import 'reusable_widgets/search_model/search_model.dart';
 
@@ -35,7 +37,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         textTheme: TextTheme(
             bodyLarge: TextStyle().headerText, // Default text color
-            bodyMedium: TextStyle().buttonText,
+            bodyMedium: TextStyle().whiteButtonText,
             bodySmall: TextStyle().textFieldText,
 
            labelLarge: TextStyle().fourteen,/// size = 14 ,weight = w400
@@ -54,7 +56,7 @@ class MyApp extends StatelessWidget {
 
         // )
       ),
-      home: LoginScreen(),
+      home: CustomerGeneral(),
     );
   }
 }

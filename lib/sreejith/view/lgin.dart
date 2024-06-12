@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:get/get.dart';
 import 'package:nexteons_widgets/sajin/buttons/filled%20_button.dart';
 import 'package:nexteons_widgets/sajin/buttons/text_button.dart';
 import 'package:nexteons_widgets/sajin/text/custom_text.dart';
+import 'package:nexteons_widgets/sreejith/button.dart/model/button_model.dart';
+import 'package:nexteons_widgets/sreejith/controller/button_controller.dart';
 import 'package:nexteons_widgets/sreejith/reusable_widgets/reusable_loginfield.dart';
 import 'package:nexteons_widgets/sreejith/view/customer_general.dart';
 
@@ -14,8 +17,16 @@ class LoginScreen extends StatelessWidget {
 
   final formkey = GlobalKey<FormState>();
 
+ 
+
+
+
   @override
   Widget build(BuildContext context) {
+
+
+
+
     var size = MediaQuery.of(context).size;
     return Scaffold(
       body: Form(
