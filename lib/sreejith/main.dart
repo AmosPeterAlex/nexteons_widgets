@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:nexteons_widgets/sajin/utils/const.dart';
+import 'package:nexteons_widgets/sajin/utils/const/const.dart';
 import 'package:nexteons_widgets/sreejith/utils/constants.dart';
 import 'package:nexteons_widgets/sreejith/view/customer_general.dart';
 import 'package:nexteons_widgets/sreejith/view/lgin.dart';
