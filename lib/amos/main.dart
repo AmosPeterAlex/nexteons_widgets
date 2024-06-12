@@ -1,10 +1,26 @@
 import 'package:flutter/material.dart';
+import 'package:nexteons_widgets/amos/core/theme/my_themes.dart';
+import 'package:nexteons_widgets/amos/sample_page.dart';
 
-class Amos extends StatelessWidget {
-  const Amos({super.key});
+void main() {
+  runApp(MyApp1());
+}
 
+class MyApp1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return MaterialApp(
+      home: const SamplePage(),
+      theme: ThemeData(colorScheme: MaterialTheme.lightScheme()),
+
+      // theme: ThemeData(
+      //   primaryColor: const Color(0XFF5570F1),
+      //   highlightColor: const Color(0xff767680),
+      //   // highlightColor: const Color(0XFF838383), //thumb color Color(0xff767680)--outline
+      //   disabledColor: const Color(0XFFD9D9D9),
+      //   // disabledColor: const Color(0xffc6c5d0), //track color Color(0xffc6c5d0)--ouline varient
+      // ),
+      debugShowCheckedModeBanner: false,
+    );
   }
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nexteons_widgets/sajin/utils/my_icon_style.dart';
 
 class CustomIconButton extends StatelessWidget {
   final IconData? icon;
@@ -17,10 +18,11 @@ class CustomIconButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return IconButton(
-      icon: Icon(icon,
-          color: iconColor ?? Theme.of(context).primaryIconTheme.color,
-          size: iconSize ?? Theme.of(context).primaryIconTheme.size),
-      onPressed: onPressed,
-    );
+        onPressed: onPressed,
+        icon: Icon(
+          icon,
+          color: iconColor ?? MyIconStyle.iconBlack.color,
+          size: iconSize ?? MyIconStyle.iconBlack.size,
+        ));
   }
 }
