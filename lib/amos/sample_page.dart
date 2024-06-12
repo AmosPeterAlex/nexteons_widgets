@@ -4,10 +4,12 @@ import 'package:nexteons_widgets/amos/widgets/checkbox_widget.dart';
 import 'package:nexteons_widgets/amos/core/padding/constants.dart';
 import 'package:nexteons_widgets/amos/group_switching_button.dart';
 import 'package:nexteons_widgets/amos/widgets/scrollbar_widget.dart';
+import 'package:nexteons_widgets/sajin/buttons/filled%20_button.dart';
+import 'package:nexteons_widgets/sajin/buttons/outline_button.dart';
 
 ///just a sample page to view scrollbar
 class SamplePage extends StatefulWidget {
-  const SamplePage({super.key});
+   SamplePage({super.key});
 
   @override
   _SamplePageState createState() => _SamplePageState();
@@ -32,13 +34,13 @@ class _SamplePageState extends State<SamplePage> {
           child: Column(
             children: [
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Wrap(
                       children: [
-                        
                         const Text(
                           'Branch Access',
                           style: TextStyle(
@@ -92,7 +94,8 @@ class _SamplePageState extends State<SamplePage> {
                     child: GridView.builder(
                       controller: c,
                       padding: const EdgeInsets.symmetric(horizontal: 10.0),
-                      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                      gridDelegate:
+                          const SliverGridDelegateWithFixedCrossAxisCount(
                         crossAxisCount: 3,
                         mainAxisSpacing: 8,
                         crossAxisSpacing: 8,
@@ -131,18 +134,23 @@ class _SamplePageState extends State<SamplePage> {
                   ),
                 ),
               ),
-              const Gap(MyPadding.xxLarge),
-              Wrap(
+               Gap(MyPadding.xxLarge),
+              Row(
                 children: [
                   //mate project ile buttons add akenm
-                  TextButton.icon(
-                    onPressed: () {
-                      setState(() {
-                        _selectedBranch = null;
-                      });
-                    },
-                    icon: const Icon(Icons.clear),
-                    label: const Text('Clear All'),
+                  // TextButton.icon(
+                  //   onPressed: () {
+                  //     setState(() {
+                  //       _selectedBranch = null;
+                  //     });
+                  //   },
+                  //   icon: const Icon(Icons.clear),
+                  //   label: const Text('Clear All'),
+                  // ),
+                  CustomOutlineButton(
+                    icon: Icons.clear,
+                    iconColor: Colors.black,
+                    buttonText: "Clear ALL",
                   ),
                   ElevatedButton.icon(
                     onPressed: () {
@@ -154,9 +162,17 @@ class _SamplePageState extends State<SamplePage> {
                       backgroundColor: Colors.blue,
                     ),
                   ),
+                  Gap(MyPadding.xxLarge),
+                  // CustomFilledButton(
+                  //   buttonText: "ggg",
+                  //   // buttonText: "mmm",
+                  //   // buttonColor: WidgetStatePropertyAll(Colors.black),
+                  //   icon: Icons.delete,
+                  // )
                 ],
+                mainAxisAlignment: MainAxisAlignment.center,
               ),
-              const SizedBox(
+               SizedBox(
                 height: MyPadding.large,
               )
             ],

@@ -10,7 +10,7 @@ class MyApp1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: const SamplePage(),
+      home:  SamplePage(),
       theme: ThemeData(colorScheme: MaterialTheme.lightScheme()),
 
       // theme: ThemeData(
