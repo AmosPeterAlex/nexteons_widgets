@@ -1,11 +1,12 @@
 
 import 'package:flutter/material.dart';
 import 'package:nexteons_widgets/sajin/text/custom_text.dart';
+import 'package:nexteons_widgets/sajin/utils/my_icon_style.dart';
 import 'package:nexteons_widgets/sajin/utils/my_textstyle.dart';
 
 class CustomFilledButton extends StatelessWidget {
   final IconData? icon;
-  final ButtonStyle? style;
+  final ButtonStyle? buttonStyle;
   final double? iconSize;
   final Color? iconColor;
 
@@ -19,7 +20,7 @@ class CustomFilledButton extends StatelessWidget {
   const CustomFilledButton({
     super.key,
     this.icon,
-    this.style,
+    this.buttonStyle,
     this.iconSize,
     this.iconColor,
     this.onPressed,
@@ -46,7 +47,7 @@ class CustomFilledButton extends StatelessWidget {
                 6.0), // Rectangular shape with rounded corners
           ),
         ),
-      ).merge(style),
+      ).merge(buttonStyle),
       // .merge chetythal style il ulla all property avidey kittum
 
       onPressed: onPressed,
@@ -57,8 +58,8 @@ class CustomFilledButton extends StatelessWidget {
             FittedBox(
               child: Icon(
                 icon,
-                size: iconSize ?? Theme.of(context).iconTheme.size,
-                color: iconColor ?? Theme.of(context).iconTheme.color,
+                size: iconSize ?? MyIconStyle.iconWhite.size,
+                color: iconColor ?? MyIconStyle.iconWhite.color
               ),
             ),
           if (icon != null && buttonText != null)
@@ -66,7 +67,7 @@ class CustomFilledButton extends StatelessWidget {
           if (buttonText != null)
             FittedBox(
                 child: CustomText(
-              text: buttonText,
+              text: buttonText??"",
               //  style:MyTextSTyles.whiteButtonText ,
               fontSize:textFontSize?? MyTextSTyles.whiteButtonText.fontSize,
               fontWeight:textFontWeight?? MyTextSTyles.whiteButtonText.fontWeight,
