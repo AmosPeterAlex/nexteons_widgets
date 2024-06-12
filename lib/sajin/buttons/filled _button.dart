@@ -87,6 +87,7 @@ class CustomFilledButton extends StatelessWidget {
   final double? textFontSize;
   final Color? textColor;
   final WidgetStateProperty<Color?>? buttonColor;
+  final FontWeight? textFontWeight;
 
   const CustomFilledButton({
     super.key,
@@ -97,6 +98,7 @@ class CustomFilledButton extends StatelessWidget {
     this.onPressed,
     this.buttonText,
     this.textFontSize,
+    this.textFontWeight,
     this.textColor,
     this.buttonColor,
   }) : assert(icon != null || buttonText != null,
@@ -107,6 +109,8 @@ class CustomFilledButton extends StatelessWidget {
     var size = MediaQuery.of(context).size;
     return FilledButton(
       style: ButtonStyle(
+        padding: WidgetStateProperty.all(
+            EdgeInsets.symmetric(horizontal: 20, vertical: 5)),
         backgroundColor: buttonColor ??
             WidgetStateProperty.all<Color>(Theme.of(context).primaryColor),
         shape: WidgetStateProperty.all<RoundedRectangleBorder>(
@@ -126,7 +130,7 @@ class CustomFilledButton extends StatelessWidget {
             FittedBox(
               child: Icon(
                 icon,
-                 size: iconSize ?? Theme.of(context).iconTheme.size,
+                size: iconSize ?? Theme.of(context).iconTheme.size,
                 color: iconColor ?? Theme.of(context).iconTheme.color,
               ),
             ),
@@ -136,9 +140,9 @@ class CustomFilledButton extends StatelessWidget {
             FittedBox(
                 child: CustomText(
               text: buttonText,
-              fontSize: Theme.of(context).textTheme.bodyMedium?.fontSize,
-              fontWeight: Theme.of(context).textTheme.bodyMedium?.fontWeight,
-              textColor: Theme.of(context).textTheme.bodyMedium?.color,
+              fontSize:textFontSize?? Theme.of(context).textTheme.bodyMedium?.fontSize,
+              fontWeight:textFontWeight?? Theme.of(context).textTheme.bodyMedium?.fontWeight,
+              textColor:textColor ??Theme.of(context).textTheme.bodyMedium?.color,
             )),
         ],
       ),

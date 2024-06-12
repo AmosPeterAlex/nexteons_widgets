@@ -9,19 +9,20 @@ import 'package:nexteons_widgets/sajin/text/custom_text.dart';
 void main() {
   runApp(MaterialApp(
     theme: ThemeData(
+      
       primaryColor: Colors.blue, // Primary color for the app
       // Accent color for the app
 
-       textTheme: TextTheme(
-        bodyLarge: TextStyle().headerText, // Default text color
-        bodyMedium: TextStyle().buttonText,
-        bodySmall: TextStyle().textFieldText // Secondary text color
-      ),
-      iconTheme: IconThemeData(
-        color: Colors.black, 
-        size: 15
-        // Default icon color
-      ),
+      textTheme: TextTheme(
+          bodyLarge: TextStyle().headerText, ///this  is used gor large fontsize and header text
+          bodyMedium: TextStyle().whiteButtonText,///this is used for white text that used in filled button
+          titleMedium: TextStyle().blackButtonText,/// this is used in black text that used in filled button and  used in another widgets  also
+          bodySmall: TextStyle().textFieldText /// text that used in textformfield
+          ),
+      iconTheme: IconThemeData().iconWhite,
+
+          primaryIconTheme: IconThemeData().iconBlack,
+
     ),
     home: SajinHomeScreen(),
   ));
@@ -32,6 +33,8 @@ class SajinHomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final cont = TextEditingController();
+
     return Scaffold(
       body: Center(
         child: Column(
@@ -39,25 +42,19 @@ class SajinHomeScreen extends StatelessWidget {
             SizedBox(
               height: 100,
             ),
-            SizedBox(
-              height: 50,
-              width: 200,
-              child: CustomFilledButton(
-                buttonText: "save",
-               
-                textFontSize: 20,
-              ),
+            CustomFilledButton(
+              buttonText: "save",
+              // textFontSize: 20,
             ),
             SizedBox(
               height: 10,
             ),
             SizedBox(
-                height: 50,
-              width: 200,
+              //  height: 50,
+               width: 150,
               child: CustomFilledButton(
                 buttonText: "save",
-              
-                textFontSize: 20,
+                // textFontSize: 20,
                 icon: Icons.add,
               ),
             ),
@@ -65,8 +62,9 @@ class SajinHomeScreen extends StatelessWidget {
               height: 10,
             ),
             SizedBox(
-              height: 25,
-              // width: 25,
+              // height: 25,
+              // width: 100,
+
               child: CustomFilledButton(
                 icon: Icons.add,
               ),
@@ -106,27 +104,53 @@ class SajinHomeScreen extends StatelessWidget {
               fontSize: Theme.of(context).textTheme.bodyLarge?.fontSize,
               fontWeight: Theme.of(context).textTheme.bodyLarge?.fontWeight,
               textColor: Theme.of(context).textTheme.bodyLarge?.color,
-              
             ),
             SizedBox(
               height: 10,
             ),
+            // CustomTextButton(
+            //   buttonText: "Product list",
+            //   onPressed: () {},
+            //   underline: true,
+            //   textColor: Colors.blue,
+            // ),
+            //  CustomTextButton(
+            //   buttonText: "llllllllllllllllllllllllllllll",
+            //   onPressed: () {},
+            //   underline: true,
+            //   textColor: Colors.blue,
+            // ),
+            // CustomTextButton(
+            //   buttonText: "Add product",
+            //   onPressed: () {},
+            //   underline: true,
+            //   textColor: Colors.blue,
+            // ),
+            // CustomTextButton(
+            //   buttonText: "forget password",
+            //   onPressed: () {},
+            // ),
             CustomTextButton(
-              buttonText: "Product list",
-              onPressed: () {},
-              underline: true,
-              textColor: Colors.blue,
-            ),
-            CustomTextButton(
-              buttonText: "Add product",
-              onPressed: () {},
-              underline: true,
-              textColor: Colors.blue,
-            ),
-            CustomTextButton(
-              buttonText: "forget password",
-              onPressed: () {},
-            )
+  onPressed: () {
+    // Your onPressed action here
+  },
+  buttonText: 'Forget Password',
+  fontSize: 16.0,
+  textColor: Colors.grey,
+  fontWeight: FontWeight.normal,
+  underline: false, // This will not show the underline
+),
+CustomTextButton(
+  onPressed: () {
+    // Your onPressed action here
+  },
+  buttonText: 'Login Product',
+  fontSize: 16.0,
+  textColor: Colors.blue,
+  fontWeight: FontWeight.normal,
+  underline: true, // This will show the underline
+),
+            
           ],
         ),
       ),
