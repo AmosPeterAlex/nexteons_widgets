@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-import 'package:nexteons_widgets/amos/checkbox_widget.dart';
+import 'package:nexteons_widgets/amos/widgets/checkbox_widget.dart';
 import 'package:nexteons_widgets/amos/core/padding/constants.dart';
 import 'package:nexteons_widgets/amos/group_switching_button.dart';
-import 'package:nexteons_widgets/amos/scrollbar_widget.dart';
+import 'package:nexteons_widgets/amos/widgets/scrollbar_widget.dart';
 
 ///just a sample page to view scrollbar
 class SamplePage extends StatefulWidget {
