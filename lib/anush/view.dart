@@ -34,47 +34,68 @@ class _MyDataGridPageState extends State<MyDataGridPage> {
     CustomTextButton(
       buttonText: "Sales",
       underline: true,
-      fontSize: 18,
+      textColor: Colors.blue,
+      textFontWeight: FontWeight.w400,
     ),
     CustomTextButton(
       buttonText: "Sales Return",
       underline: false,
+      textColor: Colors.blue,
+      textFontWeight: FontWeight.w400,
     ),
     CustomTextButton(
       buttonText: "Purchase",
       underline: true,
+      textColor: Colors.blue,
+      textFontWeight: FontWeight.w400,
     ),
     CustomTextButton(
       buttonText: "Purchase Return",
       underline: true,
+      textColor: Colors.blue,
+      textFontWeight: FontWeight.w400,
     ),
     CustomTextButton(
       buttonText: "Stock Entry",
       underline: true,
+      textColor: Colors.blue,
+      textFontWeight: FontWeight.w400,
     ),
     CustomTextButton(
       buttonText: "Stock Adjustment",
       underline: true,
+      textColor: Colors.blue,
+      textFontWeight: FontWeight.w400,
     ),
     CustomTextButton(
       buttonText: "Stock Entry",
       underline: true,
+      textColor: Colors.blue,
+      textFontWeight: FontWeight.w400,
     ),
     CustomTextButton(
       buttonText: "Good Receipt",
       underline: true,
+      textColor: Colors.blue,
+      textFontWeight: FontWeight.w400,
     ),
     CustomTextButton(
       buttonText: "Delivery Note",
       underline: true,
+      textColor: Colors.blue,
+      textFontWeight: FontWeight.w400,
     ),
     CustomTextButton(
       buttonText: "Branch Purchase",
       underline: true,
+      textColor: Colors.blue,
+      textFontWeight: FontWeight.w400,
     ),
     CustomTextButton(
       buttonText: "Branch Sales",
       underline: true,
+      textColor: Colors.blue,
+      textFontWeight: FontWeight.w400,
     ),
   ];
 
@@ -103,7 +124,7 @@ class _MyDataGridPageState extends State<MyDataGridPage> {
           showWhenUnlinked: false,
           child: Container(
               color: Color(0xFFE3F3FF),
-              height: 132,
+              height: 125,
               width: double.infinity,
               child: Center(
                 child: Container(
