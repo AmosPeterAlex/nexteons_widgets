@@ -9,7 +9,7 @@ import 'package:nexteons_widgets/sajin/buttons/outline_button.dart';
 
 ///just a sample page to view scrollbar
 class SamplePage extends StatefulWidget {
-   SamplePage({super.key});
+  const SamplePage({super.key});
 
   @override
   _SamplePageState createState() => _SamplePageState();
@@ -19,6 +19,7 @@ class _SamplePageState extends State<SamplePage> {
   int? _selectedBranch;
   final c = ScrollController();
   bool isChecked = false;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -134,45 +135,68 @@ class _SamplePageState extends State<SamplePage> {
                   ),
                 ),
               ),
-               Gap(MyPadding.xxLarge),
-              Row(
+              const Gap(MyPadding.xxLarge),
+              Column(
                 children: [
-                  //mate project ile buttons add akenm
-                  // TextButton.icon(
-                  //   onPressed: () {
-                  //     setState(() {
-                  //       _selectedBranch = null;
-                  //     });
-                  //   },
-                  //   icon: const Icon(Icons.clear),
-                  //   label: const Text('Clear All'),
-                  // ),
-                  CustomOutlineButton(
-                    icon: Icons.clear,
-                    iconColor: Colors.black,
-                    buttonText: "Clear ALL",
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      //mate project ile buttons add akenm
+                      // TextButton.icon(
+                      //   onPressed: () {
+                      //     setState(() {
+                      //       _selectedBranch = null;
+                      //     });
+                      //   },
+                      //   icon: const Icon(Icons.clear),
+                      //   label: const Text('Clear All'),
+                      // ),
+                      CustomFilledButton(
+                        onPressed: () {
+                          print("ok");
+                        },
+                        icon: Icons.abc,
+                      ),
+                      CustomOutlineButton(
+                        buttonText: "ok",
+                        onPressed: () {
+                          print("ok");
+                        },
+                        icon: Icons.clear,
+                        // iconColor: Colors.black,
+                        // buttonText: "Clear ALL",
+                      ),
+                      // ElevatedButton.icon(
+                      //   onPressed: () {
+                      //     print("save button pressed");
+                      //   },
+                      //   icon: const Icon(Icons.save),
+                      //   label: const Text('Save'),
+                      //   style: ElevatedButton.styleFrom(
+                      //     backgroundColor: Colors.blue,
+                      //   ),
+                      // ),
+                      const Gap(MyPadding.xxLarge),
+                      const CustomFilledButton(
+                        buttonText: "-----",
+                        // buttonText: "mmm",
+                        // buttonColor: WidgetStatePropertyAll(Colors.black),
+                        icon: Icons.delete,
+                      )
+                    ],
                   ),
-                  ElevatedButton.icon(
-                    onPressed: () {
-                      print("save button pressed");
-                    },
-                    icon: const Icon(Icons.save),
-                    label: const Text('Save'),
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.blue,
+                  SizedBox(
+                    width: double.infinity,
+                    child: CustomOutlineButton(
+                      icon: Icons.delete,
+                      onPressed: () {
+                        print("delete");
+                      },
                     ),
-                  ),
-                  Gap(MyPadding.xxLarge),
-                  // CustomFilledButton(
-                  //   buttonText: "ggg",
-                  //   // buttonText: "mmm",
-                  //   // buttonColor: WidgetStatePropertyAll(Colors.black),
-                  //   icon: Icons.delete,
-                  // )
+                  )
                 ],
-                mainAxisAlignment: MainAxisAlignment.center,
               ),
-               SizedBox(
+              const SizedBox(
                 height: MyPadding.large,
               )
             ],
