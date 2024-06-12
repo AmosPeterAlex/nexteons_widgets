@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:nexteons_widgets/amos/checkbox_widget.dart';
+import 'package:nexteons_widgets/amos/core/padding/constants.dart';
 import 'package:nexteons_widgets/amos/group_switching_button.dart';
 import 'package:nexteons_widgets/amos/scrollbar_widget.dart';
 
@@ -31,17 +32,13 @@ class _SamplePageState extends State<SamplePage> {
           child: Column(
             children: [
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+                padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Wrap(
                       children: [
-                        // Radio(
-                        //   value: 1,
-                        //   groupValue: 1,
-                        //   onChanged: (value) {},
-                        // ),
+                        
                         const Text(
                           'Branch Access',
                           style: TextStyle(
@@ -49,10 +46,10 @@ class _SamplePageState extends State<SamplePage> {
                             fontWeight: FontWeight.bold,
                           ),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           width: 10,
                         ),
-                        GroupSwitchingWidget(
+                        const GroupSwitchingWidget(
                           values: [
                             "1",
                             "1",
@@ -66,7 +63,7 @@ class _SamplePageState extends State<SamplePage> {
                           },
                           isChecked: isChecked,
                         ),
-                        SizedBox(
+                        const SizedBox(
                           width: 10,
                         ),
                         CheckboxWidget(
@@ -95,7 +92,7 @@ class _SamplePageState extends State<SamplePage> {
                     child: GridView.builder(
                       controller: c,
                       padding: const EdgeInsets.symmetric(horizontal: 10.0),
-                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                         crossAxisCount: 3,
                         mainAxisSpacing: 8,
                         crossAxisSpacing: 8,
@@ -125,7 +122,7 @@ class _SamplePageState extends State<SamplePage> {
                             ),
                             Text(
                               '$branchNumber-Index',
-                              style: TextStyle(fontSize: 16),
+                              style: const TextStyle(fontSize: 16),
                             ),
                           ],
                         );
@@ -134,7 +131,7 @@ class _SamplePageState extends State<SamplePage> {
                   ),
                 ),
               ),
-              Gap(25),
+              const Gap(MyPadding.xxLarge),
               Wrap(
                 children: [
                   //mate project ile buttons add akenm
@@ -144,23 +141,23 @@ class _SamplePageState extends State<SamplePage> {
                         _selectedBranch = null;
                       });
                     },
-                    icon: Icon(Icons.clear),
-                    label: Text('Clear All'),
+                    icon: const Icon(Icons.clear),
+                    label: const Text('Clear All'),
                   ),
                   ElevatedButton.icon(
                     onPressed: () {
                       print("save button pressed");
                     },
-                    icon: Icon(Icons.save),
-                    label: Text('Save'),
+                    icon: const Icon(Icons.save),
+                    label: const Text('Save'),
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.blue,
                     ),
                   ),
                 ],
               ),
-              SizedBox(
-                height: 10,
+              const SizedBox(
+                height: MyPadding.large,
               )
             ],
           ),

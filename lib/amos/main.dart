@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:nexteons_widgets/amos/core/theme/theme.dart';
+import 'package:nexteons_widgets/amos/core/theme/my_themes.dart';
 import 'package:nexteons_widgets/amos/sample_page.dart';
 
 void main() {

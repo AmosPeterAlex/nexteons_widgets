@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:nexteons_widgets/amos/core/theme/my_themes.dart';
 
 class CheckboxWidget extends StatelessWidget {
   final bool isChecked;
@@ -23,18 +24,20 @@ class CheckboxWidget extends StatelessWidget {
           // checkColor: Colors.black,
           side: WidgetStateBorderSide.resolveWith(
             (states) {
-              return BorderSide(color: Color(0XFFBDBDBD), width: .5);
+              return BorderSide(
+                  color: MaterialTheme.lightScheme().outlineVariant, width: .5);
+              // return const BorderSide(color: Color(0XFFBDBDBD), width: .5);
+              //give color through theme
             },
           ),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(3),
           ),
         ),
-        if (text != null) ...[Gap(1), Text(text!)]
+        if (text != null) ...[const Gap(1), Text(text!)]
 
-        ///add custom text widget
+        ///add custom text widget---^^----
       ],
     );
   }
 }
-
