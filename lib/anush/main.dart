@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'view.dart';
+import 'package:nexteons_widgets/anush/view.dart';
+import 'package:nexteons_widgets/sajin/utils/const/navikator_key_const.dart';
 
-void main(){
-  runApp(
-  MyApp());
-
+void main() {
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -12,10 +11,12 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  MaterialApp(
+    return MaterialApp(
+      navigatorKey: navigatorKey,
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primaryColor: Colors.blue.shade800
+        primaryColor: Colors.blue, // Primary color for the app
+        // Accent color for the app
       ),
       home: MyDataGridPage(),
     );

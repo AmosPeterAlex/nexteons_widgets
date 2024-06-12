@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_datagrid/datagrid.dart';
 
+import '../utils/customer_model.dart';
+
 class CustomDataGrid extends StatefulWidget {
   const CustomDataGrid({
     super.key,
@@ -28,7 +30,7 @@ class _CustomDataGridState extends State<CustomDataGrid> {
         color: Colors.white
       ),
 
-      padding: EdgeInsets.only(left: 40,right: 40),
+      padding: const EdgeInsets.only(left: 40,right: 40),
       child: SfDataGrid(
         rowHeight: 60,
         columnWidthMode: ColumnWidthMode.fill,
@@ -41,45 +43,45 @@ class _CustomDataGridState extends State<CustomDataGrid> {
           GridColumn(
               columnName: 'Customer',
               label: Container(
-                  padding: EdgeInsets.all(8.0),
+                  padding: const EdgeInsets.all(8.0),
                   alignment: Alignment.center,
                   color: Colors.white,
-                  child: Text('Customer', style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20)))),
+                  child: const Text('Customer', style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20)))),
           GridColumn(
               columnName: 'Payment Method',
               label: Container(
-                  padding: EdgeInsets.all(8.0),
+                  padding: const EdgeInsets.all(8.0),
                   alignment: Alignment.center,
                   color: Colors.white,
-                  child: Text('Payment Method', style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20)))),
+                  child: const Text('Payment Method', style: TextStyle(fontWeight: FontWeight.bold,fontSize:20)))),
           GridColumn(
               columnName: 'Account',
               label: Container(
-                  padding: EdgeInsets.all(8.0),
+                  padding: const EdgeInsets.all(8.0),
                   alignment: Alignment.center,
                   color: Colors.white,
-                  child: Text('Account', style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20)))),
+                  child: const Text('Account', style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20)))),
           GridColumn(
               columnName: 'Currency',
               label: Container(
-                  padding: EdgeInsets.all(8.0),
+                  padding: const EdgeInsets.all(8.0),
                   alignment: Alignment.center,
                   color: Colors.white,
-                  child: Text('Currency', style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20)))),
+                  child: const Text('Currency', style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20)))),
           GridColumn(
               columnName: 'Exchange Rate',
               label: Container(
-                  padding: EdgeInsets.all(8.0),
+                  padding: const EdgeInsets.all(8.0),
                   alignment: Alignment.center,
                   color: Colors.white,
-                  child: Text('Exchange Rate', style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20)))),
+                  child: const Text('Exchange Rate', style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20)))),
           GridColumn(
               columnName: 'Total Amount',
               label: Container(
-                  padding: EdgeInsets.all(8.0),
+                  padding: const EdgeInsets.all(8.0),
                   alignment: Alignment.center,
                   color: Colors.white,
-                  child: Text('Total Amount', style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20)))),
+                  child: const Text('Total Amount', style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20)))),
         ],
 
 
@@ -143,15 +145,15 @@ class CustomerDataSource extends DataGridSource {
         }
         return Container(
           decoration: BoxDecoration(
-              color: Color.fromARGB(255, 231, 236, 245),
+              color: const Color.fromARGB(255, 231, 236, 245),
               borderRadius: borderRadius
           ),
-          margin: EdgeInsets.only(top: 10),
+          margin: const EdgeInsets.only(top: 10),
           alignment: Alignment.center,
-          padding: EdgeInsets.all(8.0),
+          padding: const EdgeInsets.all(8.0),
           child: Text(
             dataGridCell.value.toString(),
-            style: TextStyle(
+            style: const TextStyle(
               fontSize: 18,
               color: Colors.black,
             ),
@@ -164,13 +166,4 @@ class CustomerDataSource extends DataGridSource {
 
 
 ///model class
-class Customer {
-  Customer(this.customerName, this.paymentMethod, this.account, this.currency, this.exchangeRate, this.totalAmount);
 
-  final String customerName;
-  final String paymentMethod;
-  final String account;
-  final String currency;
-  final double exchangeRate;
-  final double totalAmount;
-}

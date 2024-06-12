@@ -3,7 +3,7 @@ import 'package:nexteons_widgets/sajin/text/custom_text.dart';
 import 'package:nexteons_widgets/sreejith/reusable_widgets/reusable_textFormField.dart';
 
 class ReusableLoginTextField extends StatelessWidget {
-  ReusableLoginTextField(
+  const ReusableLoginTextField(
       {super.key,
       required this.text,
       this.controller,
@@ -44,7 +44,7 @@ class ReusableLoginTextField extends StatelessWidget {
         ),
 
         ///need to do gap
-        SizedBox(
+        const SizedBox(
           height: 10,
         ),
 
