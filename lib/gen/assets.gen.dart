@@ -27,9 +27,26 @@ class $AssetsPngGen {
   /// File path: assets/png/last_page.png
   AssetGenImage get lastPage => const AssetGenImage('assets/png/last_page.png');
 
+  /// File path: assets/png/logo.png
+  AssetGenImage get logo => const AssetGenImage('assets/png/logo.png');
+
+  /// File path: assets/png/notifications.png
+  AssetGenImage get notifications =>
+      const AssetGenImage('assets/png/notifications.png');
+
+  /// File path: assets/png/settings.png
+  AssetGenImage get settings => const AssetGenImage('assets/png/settings.png');
+
   /// List of all assets
-  List<AssetGenImage> get values =>
-      [arrowBackwardIos, arrowForwardIos, firstPage, lastPage];
+  List<AssetGenImage> get values => [
+        arrowBackwardIos,
+        arrowForwardIos,
+        firstPage,
+        lastPage,
+        logo,
+        notifications,
+        settings
+      ];
 }
 
 class $AssetsSvgGen {

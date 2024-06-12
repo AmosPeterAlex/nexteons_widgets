@@ -90,7 +90,7 @@ class CustomTextButton extends StatelessWidget {
   final FontWeight? fontWeight;
   final bool underline;
 
-  CustomTextButton(
+  const CustomTextButton(
       {super.key,
       this.onPressed,
       this.fontSize,

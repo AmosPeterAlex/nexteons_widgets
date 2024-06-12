@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:nexteons_widgets/sajin/utils/const.dart';
 import 'package:nexteons_widgets/sreejith/utils/constants.dart';
 import 'package:nexteons_widgets/sreejith/view/lgin.dart';
-import 'package:nexteons_widgets/sreejith/view/view.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,16 +16,16 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData(
         textTheme: TextTheme(
-            bodyLarge: TextStyle().headerText, // Default text color
-            bodyMedium: TextStyle().buttonText,
-            bodySmall: TextStyle().textFieldText,
+            bodyLarge: const TextStyle().headerText, // Default text color
+            bodyMedium: const TextStyle().buttonText,
+            bodySmall: const TextStyle().textFieldText,
            
-            labelSmall: TextStyle().textf,  ///for text content inside textformfield Size = 15,weight = normal
-            labelMedium: TextStyle().texthed), /// for text content inside textform size = 16 , weiht = w700
+            labelSmall: const TextStyle().textf,  ///for text content inside textformfield Size = 15,weight = normal
+            labelMedium: const TextStyle().texthed), /// for text content inside textform size = 16 , weiht = w700
        
-        primaryColor: Color(0xFF2164B0),
+        primaryColor: const Color(0xFF2164B0),
         primaryColorDark: Colors.black,
-        secondaryHeaderColor: Color(0xFFCBCBCB),
+        secondaryHeaderColor: const Color(0xFFCBCBCB),
 
 
     

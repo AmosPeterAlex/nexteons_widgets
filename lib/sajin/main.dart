@@ -13,17 +13,17 @@ void main() {
       // Accent color for the app
 
        textTheme: TextTheme(
-        bodyLarge: TextStyle().headerText, // Default text color
-        bodyMedium: TextStyle().buttonText,
-        bodySmall: TextStyle().textFieldText // Secondary text color
+        bodyLarge: const TextStyle().headerText, // Default text color
+        bodyMedium: const TextStyle().buttonText,
+        bodySmall: const TextStyle().textFieldText // Secondary text color
       ),
-      iconTheme: IconThemeData(
+      iconTheme: const IconThemeData(
         color: Colors.black, 
         size: 15
         // Default icon color
       ),
     ),
-    home: SajinHomeScreen(),
+    home: const SajinHomeScreen(),
   ));
 }
 
@@ -36,10 +36,10 @@ class SajinHomeScreen extends StatelessWidget {
       body: Center(
         child: Column(
           children: [
-            SizedBox(
+            const SizedBox(
               height: 100,
             ),
-            SizedBox(
+            const SizedBox(
               height: 50,
               width: 200,
               child: CustomFilledButton(
@@ -48,10 +48,10 @@ class SajinHomeScreen extends StatelessWidget {
                 textFontSize: 20,
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
-            SizedBox(
+            const SizedBox(
                 height: 50,
               width: 200,
               child: CustomFilledButton(
@@ -61,44 +61,44 @@ class SajinHomeScreen extends StatelessWidget {
                 icon: Icons.add,
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
-            SizedBox(
+            const SizedBox(
               height: 25,
               // width: 25,
               child: CustomFilledButton(
                 icon: Icons.add,
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
-            CustomOutlineButton(
+            const CustomOutlineButton(
               buttonText: "add",
               textColor: Colors.black,
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
-            CustomOutlineButton(
+            const CustomOutlineButton(
               buttonText: "add",
               textColor: Colors.black,
               icon: Icons.add,
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
-            CustomOutlineButton(
+            const CustomOutlineButton(
               icon: Icons.add,
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
-            CustomIconButton(
+            const CustomIconButton(
               icon: Icons.add,
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             CustomText(
@@ -108,7 +108,7 @@ class SajinHomeScreen extends StatelessWidget {
               textColor: Theme.of(context).textTheme.bodyLarge?.color,
               
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             CustomTextButton(

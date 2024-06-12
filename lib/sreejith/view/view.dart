@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:nexteons_widgets/sreejith/reusable_widgets/reusable_loginfield.dart';
 import 'package:nexteons_widgets/sreejith/reusable_widgets/reusable_textFormField.dart';
 
 import '../../sajin/buttons/filled _button.dart';
@@ -18,7 +17,7 @@ class RefactorViews extends StatelessWidget {
           child: Column(
           
             children: [
-              SizedBox(
+              const SizedBox(
                 width: double.infinity,
                 child: ReusableTextFormField(
                   enabled: false,
@@ -34,7 +33,7 @@ class RefactorViews extends StatelessWidget {
                   contentPadding: EdgeInsets.zero,
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               ReusableTextFormField(

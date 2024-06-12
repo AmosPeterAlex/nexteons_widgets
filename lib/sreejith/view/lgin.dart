@@ -3,7 +3,6 @@ import 'package:nexteons_widgets/sajin/buttons/filled%20_button.dart';
 import 'package:nexteons_widgets/sajin/buttons/text_button.dart';
 import 'package:nexteons_widgets/sajin/text/custom_text.dart';
 import 'package:nexteons_widgets/sreejith/reusable_widgets/reusable_loginfield.dart';
-import 'package:nexteons_widgets/sreejith/reusable_widgets/reusable_textFormField.dart';
 
 class LoginScreen extends StatelessWidget {
   LoginScreen({super.key});
@@ -23,7 +22,7 @@ class LoginScreen extends StatelessWidget {
           Container(
             height: size.height,
             width: 600,
-            color: Color(0xFFE3F3FF),
+            color: const Color(0xFFE3F3FF),
           ),
       
           ///main container for login and email textformfield
@@ -64,7 +63,7 @@ class LoginScreen extends StatelessWidget {
                   ),
       
                   ///Nedd to change to gap
-                  SizedBox(
+                  const SizedBox(
                     height: 30,
                   ),
       
@@ -74,7 +73,7 @@ class LoginScreen extends StatelessWidget {
                   ),
       
                   ///need to change as gap
-                  SizedBox(
+                  const SizedBox(
                     height: 20,
                   ),
       
@@ -89,25 +88,25 @@ class LoginScreen extends StatelessWidget {
                   ),
       
                   ///need to change as gap
-                  SizedBox(
+                  const SizedBox(
                     height: 20,
                   ),
       
                   SizedBox(
                     width: size.width,
-                    child: CustomFilledButton(
+                    child: const CustomFilledButton(
                       buttonText: "Login",
                       // buttonColor: WidgetStateProperty.all(),
                     ),
                   ),
       
                   ///need to change as gap
-                  SizedBox(
+                  const SizedBox(
                     height: 20,
                   ),
 
 
-                  Spacer(),
+                  const Spacer(),
       
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,

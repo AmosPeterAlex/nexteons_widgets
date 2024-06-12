@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:nexteons_widgets/anush/view.dart';
 import 'package:nexteons_widgets/sajin/utils/const.dart';
-import 'view.dart';
 
-void main(){
-  runApp(
-  MyApp());
-
+void main() {
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -13,22 +11,20 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primaryColor: Colors.blue, // Primary color for the app
         // Accent color for the app
 
         textTheme: TextTheme(
-            bodyLarge: TextStyle().headerText, // Default text color
-            bodyMedium: TextStyle().buttonText,
-            bodySmall: TextStyle().textFieldText // Secondary text color
-        ),
-        iconTheme: IconThemeData(
-            color: Colors.black,
-            size: 15
-          // Default icon color
-        ),
+            bodyLarge: const TextStyle().headerText, // Default text color
+            bodyMedium: const TextStyle().buttonText,
+            bodySmall: const TextStyle().textFieldText // Secondary text color
+            ),
+        iconTheme: const IconThemeData(color: Colors.black, size: 15
+            // Default icon color
+            ),
       ),
       home: MyDataGridPage(),
     );

@@ -1,4 +1,4 @@
-enum ImageButton {
+enum CustomEnumButtonBar {
   attachFile,
   moveGroup,
   filter,
