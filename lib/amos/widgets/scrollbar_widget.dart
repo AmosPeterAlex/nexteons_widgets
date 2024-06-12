@@ -18,6 +18,7 @@ class MyScrollBarWidget extends StatelessWidget {
     return ScrollbarTheme(
       data: ScrollbarThemeData(
         mainAxisMargin: 3,
+        trackBorderColor: const WidgetStatePropertyAll(Colors.transparent),
         trackColor:
             WidgetStatePropertyAll(MaterialTheme.lightScheme().outlineVariant),
       ),
