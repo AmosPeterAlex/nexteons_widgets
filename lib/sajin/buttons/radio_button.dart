@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nexteons_widgets/sajin/text/custom_text.dart';
+import 'package:nexteons_widgets/sajin/utils/my_textstyle.dart';
 
 class CustomRadioButton extends StatelessWidget {
   final String? buttonText;
@@ -11,9 +12,9 @@ class CustomRadioButton extends StatelessWidget {
 
   const CustomRadioButton({
     super.key,
-     this.buttonText,
-     this.isSelected,
-     this.onTap,
+    this.buttonText,
+    this.isSelected,
+    this.onTap,
     this.textFontSize,
     this.textColor,
     this.textFontWeight,
@@ -51,14 +52,12 @@ class CustomRadioButton extends StatelessWidget {
                 : null,
           ),
           CustomText(
-            text: buttonText,
-            fontSize: textFontSize ??
-                Theme.of(context).textTheme.titleMedium?.fontSize,
-            fontWeight: textFontWeight ??
-                Theme.of(context).textTheme.titleMedium?.fontWeight,
-            textColor:
-                textColor ?? Theme.of(context).textTheme.titleMedium?.color,
-          )
+              text: buttonText ?? "",
+              fontSize: textFontSize ?? MyTextSTyles.blackButtonText.fontSize,
+              fontWeight:
+                  textFontWeight ?? MyTextSTyles.blackButtonText.fontWeight,
+              textColor:
+                  textColor ?? textColor ?? MyTextSTyles.blackButtonText.color)
         ],
       ),
     );

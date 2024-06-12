@@ -37,9 +37,9 @@ class _SajinHomeScreenState extends State<SajinHomeScreen> {
               ),
               CustomFilledButton(
                 buttonText: "save",
-                // textFontSize: 20,
-                // style: ButtonStyle(
-                //     textStyle: WidgetStatePropertyAll(TextStyle(fontSize: 60))),
+                textFontSize: 20,
+                // buttonStyle: ButtonStyle(
+                //     backgroundColor: WidgetStatePropertyAll(Colors.amber)),
                 // textColor: Theme.of(context).colorScheme.tertiary,
               ),
               SizedBox(
@@ -70,7 +70,11 @@ class _SajinHomeScreenState extends State<SajinHomeScreen> {
               ),
               CustomOutlineButton(
                 buttonText: "add",
-                textColor: Colors.black,
+                // buttonStyle: ButtonStyle(
+                //     textStyle: WidgetStatePropertyAll(TextStyle(
+                //         fontSize: 60,
+                //         color: Theme.of(context).colorScheme.primary))),
+                // textColor: Theme.of(context).colorScheme.tertiary,
               ),
               SizedBox(
                 height: 10,
@@ -112,9 +116,7 @@ class _SajinHomeScreenState extends State<SajinHomeScreen> {
                   // Your onPressed action here
                 },
                 buttonText: 'Forget Password',
-                // textFontSize: 16.0,
-                // textColor: Colors.grey,
-                // textFontWeight: FontWeight.normal,
+                
                 underline: false, // This will not show the underline
               ),
               CustomTextButton(
@@ -122,9 +124,7 @@ class _SajinHomeScreenState extends State<SajinHomeScreen> {
                   // Your onPressed action here
                 },
                 buttonText: 'Login Product',
-                // textFontSize: 16.0,
-                // textColor: Colors.blue,
-                // textFontWeight: FontWeight.normal,
+                
                 underline: true, // This will show the underline
               ),
               Row(
