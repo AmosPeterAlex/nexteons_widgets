@@ -1,135 +1,34 @@
 import 'package:flutter/material.dart';
-import 'package:nexteons_widgets/sajin/utils/const.dart';
+import 'package:nexteons_widgets/sajin/buttons/radio_button.dart';
+import 'package:nexteons_widgets/sajin/utils/const/const.dart';
 import 'package:nexteons_widgets/sajin/buttons/filled%20_button.dart';
 import 'package:nexteons_widgets/sajin/buttons/icon_button.dart';
 import 'package:nexteons_widgets/sajin/buttons/outline_button.dart';
 import 'package:nexteons_widgets/sajin/buttons/text_button.dart';
 import 'package:nexteons_widgets/sajin/text/custom_text.dart';
+import 'package:nexteons_widgets/sajin/utils/const/navikator_key_const.dart';
+import 'package:nexteons_widgets/sajin/utils/theme/theme.dart';
+import 'package:nexteons_widgets/sajin/view/home.dart';
 
 void main() {
   runApp(MaterialApp(
     theme: ThemeData(
-      primaryColor: Colors.blue, // Primary color for the app
-      // Accent color for the app
+      // primaryColor: Color(0xff2164B0), // Primary color for the app
+      // primaryColorLight: Color(0xff5570F1),
+      colorScheme: MaterialTheme.lightScheme(),
 
-       textTheme: TextTheme(
-        bodyLarge: const TextStyle().headerText, // Default text color
-        bodyMedium: const TextStyle().buttonText,
-        bodySmall: const TextStyle().textFieldText // Secondary text color
-      ),
-      iconTheme: const IconThemeData(
-        color: Colors.black, 
-        size: 15
-        // Default icon color
-      ),
+//  textTheme: Theme.of(context).textTheme.apply(fontFamily: ),arshak bro paranjai code
+      // textTheme: TextTheme(
+      //     bodyLarge: TextStyle().headerText,
+      //     bodyMedium: TextStyle().whiteButtonText,
+      //     titleMedium: TextStyle().blackButtonText,
+      //     titleLarge: TextStyle().GreyButtonText,
+      //     bodySmall: TextStyle().textFieldText),
+      // iconTheme: IconThemeData().iconWhite,
+
+      // primaryIconTheme: IconThemeData().iconBlack,
     ),
-    home: const SajinHomeScreen(),
+    navigatorKey: navigatorKey,
+    home: SajinHomeScreen(),
   ));
-}
-
-class SajinHomeScreen extends StatelessWidget {
-  const SajinHomeScreen({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: Column(
-          children: [
-            const SizedBox(
-              height: 100,
-            ),
-            const SizedBox(
-              height: 50,
-              width: 200,
-              child: CustomFilledButton(
-                buttonText: "save",
-               
-                textFontSize: 20,
-              ),
-            ),
-            const SizedBox(
-              height: 10,
-            ),
-            const SizedBox(
-                height: 50,
-              width: 200,
-              child: CustomFilledButton(
-                buttonText: "save",
-              
-                textFontSize: 20,
-                icon: Icons.add,
-              ),
-            ),
-            const SizedBox(
-              height: 10,
-            ),
-            const SizedBox(
-              height: 25,
-              // width: 25,
-              child: CustomFilledButton(
-                icon: Icons.add,
-              ),
-            ),
-            const SizedBox(
-              height: 10,
-            ),
-            const CustomOutlineButton(
-              buttonText: "add",
-              textColor: Colors.black,
-            ),
-            const SizedBox(
-              height: 10,
-            ),
-            const CustomOutlineButton(
-              buttonText: "add",
-              textColor: Colors.black,
-              icon: Icons.add,
-            ),
-            const SizedBox(
-              height: 10,
-            ),
-            const CustomOutlineButton(
-              icon: Icons.add,
-            ),
-            const SizedBox(
-              height: 10,
-            ),
-            const CustomIconButton(
-              icon: Icons.add,
-            ),
-            const SizedBox(
-              height: 10,
-            ),
-            CustomText(
-              text: "welcome back!",
-              fontSize: Theme.of(context).textTheme.bodyLarge?.fontSize,
-              fontWeight: Theme.of(context).textTheme.bodyLarge?.fontWeight,
-              textColor: Theme.of(context).textTheme.bodyLarge?.color,
-              
-            ),
-            const SizedBox(
-              height: 10,
-            ),
-            CustomTextButton(
-              buttonText: "Product list",
-              onPressed: () {},
-              underline: true,
-              textColor: Colors.blue,
-            ),
-            CustomTextButton(
-              buttonText: "Add product",
-              onPressed: () {},
-              underline: true,
-              textColor: Colors.blue,
-            ),
-            CustomTextButton(
-              buttonText: "forget password",
-              onPressed: () {},
-            )
-          ],
-        ),
-      ),
-    );
-  }
 }

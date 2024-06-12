@@ -1,135 +1,75 @@
-// // import 'package:flutter/material.dart';
 
-// // class CustomTextButton extends StatelessWidget {
-// //   final void Function()? onPressed;
-// //   final String? buttonText;
-// //   final double? fontSize;
-// //   final Color? textColor;
-// //   final TextStyle? style;
-// //   final FontWeight? fontWeight;
-// //   final bool underline;
-// //   CustomTextButton(
-// //       {super.key,
-// //       this.onPressed,
-// //       this.fontSize,
-// //       this.textColor,
-// //       this.style,
-// //       this.fontWeight,
-// //       this.buttonText,this.underline = false});
-
-// //   @override
-// //   Widget build(BuildContext context) {
-// //     return TextButton(
-// //         onPressed: onPressed,
-// //         child: Text(
-// //           buttonText ?? "",
-// //           style: TextStyle(
-// //               color: textColor ?? Theme.of(context).textTheme.bodyMedium?.color,
-// //               fontSize: fontSize ?? 16,
-// //               fontWeight: fontWeight ?? FontWeight.w500,
-// //                decoration: underline ? TextDecoration.underline : TextDecoration.none,
-// //                decorationColor: textColor ?? Theme.of(context).textTheme.bodyMedium?.color,
-// //                decorationThickness: 2,
-// //               ).merge(style),
-// //         ),
-        
-// //         );
-// //   }
-// // }
-// import 'package:flutter/material.dart';
-
-// class CustomTextButton extends StatelessWidget {
-//   final void Function()? onPressed;
-//   final String? buttonText;
-//   final double? fontSize;
-//   final Color? textColor;
-//   final TextStyle? style;
-//   final FontWeight? fontWeight;
-//   final bool underline;
-
-//   CustomTextButton(
-//       {super.key,
-//       this.onPressed,
-//       this.fontSize,
-//       this.textColor,
-//       this.style,
-//       this.fontWeight,
-//       this.buttonText,
-//       this.underline = false}); // default underline to false
-
-//   @override
-//   Widget build(BuildContext context) {
-//     final effectiveTextColor = textColor ?? Theme.of(context).textTheme.bodyMedium?.color;
-
-//     return TextButton(
-//         onPressed: onPressed,
-//         child: RichText(
-//           text: TextSpan(
-//             text: buttonText ?? "",
-//             style: TextStyle(
-//               color: effectiveTextColor,
-//               fontSize: fontSize ?? 16,
-//               fontWeight: fontWeight ?? FontWeight.w500,
-//               decoration: underline ? TextDecoration.underline : TextDecoration.none,
-//               decorationColor: effectiveTextColor,
-//               decorationThickness: 3, // Thickness of the underline
-//               height: 2, // Adjust height to add space between text and underline
-//             ).merge(style),
-//           ),
-//         ));
-//   }
-// }
 import 'package:flutter/material.dart';
+import 'package:nexteons_widgets/sajin/text/custom_text.dart';
+import 'package:nexteons_widgets/sajin/utils/my_textstyle.dart';
 
 class CustomTextButton extends StatelessWidget {
   final void Function()? onPressed;
   final String? buttonText;
-  final double? fontSize;
+  final double? textFontSize;
   final Color? textColor;
-  final TextStyle? style;
-  final FontWeight? fontWeight;
+  final ButtonStyle? buttonStyle;
+  final FontWeight? textFontWeight;
   final bool underline;
+  final double underlineThickness;
+  final double underlineGap;
 
-  const CustomTextButton(
-      {super.key,
-      this.onPressed,
-      this.fontSize,
-      this.textColor,
-      this.style,
-      this.fontWeight,
-      this.buttonText,
-      this.underline = false}); // default underline to false
+  CustomTextButton({
+    Key? key,
+    this.onPressed,
+    this.textFontSize,
+    this.textColor,
+    this.buttonStyle,
+    this.textFontWeight,
+    this.buttonText,
+    this.underline = false,
+    this.underlineThickness = 1.2,
+    this.underlineGap = 1.5,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final effectiveTextColor = textColor ?? Theme.of(context).textTheme.bodyLarge?.color;
-
     return TextButton(
       onPressed: onPressed,
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          IntrinsicWidth(
-            child: Text(
-            
-              buttonText ?? "",
-              style: TextStyle(
-                color: effectiveTextColor,
-                fontSize: fontSize ?? 16,
-                fontWeight: fontWeight ?? FontWeight.w500,
-              ).merge(style),
-            ),
+      style: buttonStyle,
+      child: CustomPaint(
+        painter: underline ? TextUnderlinePainter(textColor, underlineThickness, underlineGap) : null,
+        
+        child: CustomText(
+          text: buttonText??null,
+         fontSize:textFontSize?? MyTextSTyles.greyButtonText.fontSize,
+              fontWeight:textFontWeight?? MyTextSTyles.greyButtonText.fontWeight,
+              textColor:textColor ??MyTextSTyles.greyButtonText.color,
+          style: TextStyle(
+            decoration: TextDecoration.none,
           ),
-          if (underline)
-            Container(
-              margin: const EdgeInsets.only(top: 2), // Adjust the gap here
-              height: 2, // Thickness of the underline
-              color: effectiveTextColor,
-              width: (buttonText ?? "").length * (fontSize ?? 16) * 0.5, // Approximate text width
-            ),
-        ],
+        ),
       ),
     );
   }
 }
+
+class TextUnderlinePainter extends CustomPainter {
+  final Color? underlineColor;
+  final double underlineThickness;
+  final double underlineGap;
+
+  TextUnderlinePainter(this.underlineColor, this.underlineThickness, this.underlineGap);
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    final paint = Paint()
+      ..color = underlineColor ?? Colors.black
+      ..strokeWidth = underlineThickness
+      ..style = PaintingStyle.stroke;
+
+    final textBottom = size.height - underlineGap;
+    canvas.drawLine(Offset(0, textBottom), Offset(size.width, textBottom), paint);
+  }
+
+  @override
+  bool shouldRepaint(CustomPainter oldDelegate) {
+    return false;
+  }
+}
+
