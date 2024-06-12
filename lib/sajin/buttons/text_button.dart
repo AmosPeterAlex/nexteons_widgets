@@ -1,62 +1,15 @@
 
-// import 'package:flutter/material.dart';
-
-// class CustomTextButton extends StatelessWidget {
-//   final void Function()? onPressed;
-//   final String? buttonText;
-//   final double? fontSize;
-//   final Color? textColor;
-//   final TextStyle? style;
-//   final FontWeight? fontWeight;
-//   final bool underline;
-//    final double underlineThickness;
-
-//   CustomTextButton({
-//     Key? key,
-//     this.onPressed,
-//     this.fontSize,
-//     this.textColor,
-//     this.style,
-//     this.fontWeight,
-//     this.buttonText,
-//     this.underline = false,
-//     this.underlineThickness = 2.0,
-//   }) : super(key: key);
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return TextButton(
-//       onPressed: onPressed,
-//       child: Text(
-//         buttonText ?? '',
-//         style: TextStyle(
-//               fontSize: fontSize,
-//               color: textColor,
-//               fontWeight: fontWeight,
-//               decoration: underline ? TextDecoration.underline : TextDecoration.none,
-//                decorationThickness: underline ? underlineThickness : null,
-//                decorationColor: textColor,
-//             ).merge(style),
-//             // ??
-//             // TextStyle(
-//             //   fontSize: fontSize,
-//             //   color: textColor,
-//             //   fontWeight: fontWeight,
-//             //   decoration: underline ? TextDecoration.underline : TextDecoration.none,
-//             // ).merge(style),
-//       ),
-//     );
-//   }
-// }
 import 'package:flutter/material.dart';
+import 'package:nexteons_widgets/sajin/text/custom_text.dart';
+import 'package:nexteons_widgets/sajin/utils/my_textstyle.dart';
 
 class CustomTextButton extends StatelessWidget {
   final void Function()? onPressed;
   final String? buttonText;
-  final double? fontSize;
+  final double? textFontSize;
   final Color? textColor;
-  final TextStyle? style;
-  final FontWeight? fontWeight;
+  final ButtonStyle? style;
+  final FontWeight? textFontWeight;
   final bool underline;
   final double underlineThickness;
   final double underlineGap;
@@ -64,31 +17,32 @@ class CustomTextButton extends StatelessWidget {
   CustomTextButton({
     Key? key,
     this.onPressed,
-    this.fontSize,
+    this.textFontSize,
     this.textColor,
     this.style,
-    this.fontWeight,
+    this.textFontWeight,
     this.buttonText,
     this.underline = false,
-    this.underlineThickness = 2.0,
-    this.underlineGap = 2.0,
+    this.underlineThickness = 1.2,
+    this.underlineGap = 1.5,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return TextButton(
       onPressed: onPressed,
+      style: style,
       child: CustomPaint(
         painter: underline ? TextUnderlinePainter(textColor, underlineThickness, underlineGap) : null,
-        child: Text(
-          buttonText ?? '',
-          style: 
-              TextStyle(
-                fontSize: fontSize,
-                color: textColor,
-                fontWeight: fontWeight,
-                decoration: TextDecoration.none,
-              ).merge(style),
+        
+        child: CustomText(
+          text: buttonText??null,
+         fontSize:textFontSize?? MyTextSTyles.greyButtonText.fontSize,
+              fontWeight:textFontWeight?? MyTextSTyles.greyButtonText.fontWeight,
+              textColor:textColor ??MyTextSTyles.greyButtonText.color,
+          style: TextStyle(
+            decoration: TextDecoration.none,
+          ),
         ),
       ),
     );
