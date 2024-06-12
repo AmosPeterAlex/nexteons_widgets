@@ -3,17 +3,19 @@ import 'package:gap/gap.dart';
 import 'package:nexteons_widgets/amos/checkbox_widget.dart';
 import 'package:nexteons_widgets/amos/group_switching_button.dart';
 import 'package:nexteons_widgets/amos/scrollbar_widget.dart';
-import 'scrollbar_without_color.dart';
 
-//just a sample page to view scrollbar
+///just a sample page to view scrollbar
 class SamplePage extends StatefulWidget {
+  const SamplePage({super.key});
+
   @override
   _SamplePageState createState() => _SamplePageState();
 }
 
 class _SamplePageState extends State<SamplePage> {
   int? _selectedBranch;
-
+  final c = ScrollController();
+  bool isChecked = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -53,22 +55,28 @@ class _SamplePageState extends State<SamplePage> {
                         GroupSwitchingWidget(
                           values: [
                             "1",
-                            "ab",
-                            "alc",
-                            "abe",
                             "1",
                             "1h",
-                            "1",
                           ],
-
+                        ),
+                        CheckboxWidget(
+                          onChanged: (value) {
+                            isChecked = value!;
+                            setState(() {});
+                          },
+                          isChecked: isChecked,
                         ),
                         SizedBox(
                           width: 10,
                         ),
-                        RoundedCheckbox(
-                          initialValue: false,
+                        CheckboxWidget(
                           text: "TICK",
-                        )
+                          onChanged: (value) {
+                            isChecked = value!;
+                            setState(() {});
+                          },
+                          isChecked: isChecked,
+                        ),
                       ],
                     ),
                     const Icon(Icons.delete)
@@ -82,8 +90,10 @@ class _SamplePageState extends State<SamplePage> {
                       horizontal: 10.0, vertical: 20),
                   //custom scroll bar
                   child: MyScrollBarWidget(
+                    controller: c,
                     //track color and thumb color refractor akumbole kodukam
                     child: GridView.builder(
+                      controller: c,
                       padding: const EdgeInsets.symmetric(horizontal: 10.0),
                       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                         crossAxisCount: 3,
@@ -114,7 +124,7 @@ class _SamplePageState extends State<SamplePage> {
                               ),
                             ),
                             Text(
-                              '$branchNumber - Default Branch',
+                              '$branchNumber-Index',
                               style: TextStyle(fontSize: 16),
                             ),
                           ],
@@ -124,7 +134,7 @@ class _SamplePageState extends State<SamplePage> {
                   ),
                 ),
               ),
-             Gap(25),
+              Gap(25),
               Wrap(
                 children: [
                   //mate project ile buttons add akenm

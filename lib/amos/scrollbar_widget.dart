@@ -1,23 +1,30 @@
 import 'package:flutter/material.dart';
-import 'package:nexteons_widgets/amos/scrollbar_without_color.dart';
-import 'package:nexteons_widgets/amos/scrollbar_with_defaultcolor.dart';
+import 'package:nexteons_widgets/amos/core/theme/theme.dart';
+import 'package:nexteons_widgets/amos/custom_scrollbar.dart';
 
 //custom widget
 
 class MyScrollBarWidget extends StatelessWidget {
   final Widget child;
 
-  const MyScrollBarWidget({super.key, required this.child});
+  ///give same controller of scrollable child
+  final ScrollController? controller;
+
+  const MyScrollBarWidget({super.key, required this.child, this.controller});
 
   @override
   Widget build(BuildContext context) {
-    return ScrollbarColored(
-      // controller:, //doubt
-      trackRadius: const Radius.circular(12),
-      thumbVisibility: true,
-      interactive: false,
-      trackVisibility: true,
-      child: child,
+    return ScrollbarTheme(
+      data: ScrollbarThemeData(
+          mainAxisMargin: 3, trackColor: WidgetStatePropertyAll(MaterialTheme.lightScheme().outlineVariant),),
+      child: CustomScrollbar(
+        controller: controller,
+        trackRadius: const Radius.circular(12),
+        thumbVisibility: true,
+        interactive: false,
+        trackVisibility: true,
+        child: child,
+      ),
     );
   }
 }
