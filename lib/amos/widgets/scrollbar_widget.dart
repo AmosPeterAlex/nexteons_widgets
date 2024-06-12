@@ -18,7 +18,7 @@ class MyScrollBarWidget extends StatelessWidget {
     return ScrollbarTheme(
       data: ScrollbarThemeData(
           mainAxisMargin: 3, trackColor: WidgetStatePropertyAll(MaterialTheme.lightScheme().outlineVariant),),
-      child: CustomScrollBarWithNoColor(
+      child: CustomScrollbar(
         controller: controller,
         trackRadius: const Radius.circular(12),
         thumbVisibility: true,
