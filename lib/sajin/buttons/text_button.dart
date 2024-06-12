@@ -8,7 +8,7 @@ class CustomTextButton extends StatelessWidget {
   final String? buttonText;
   final double? textFontSize;
   final Color? textColor;
-  final ButtonStyle? style;
+  final ButtonStyle? buttonStyle;
   final FontWeight? textFontWeight;
   final bool underline;
   final double underlineThickness;
@@ -19,7 +19,7 @@ class CustomTextButton extends StatelessWidget {
     this.onPressed,
     this.textFontSize,
     this.textColor,
-    this.style,
+    this.buttonStyle,
     this.textFontWeight,
     this.buttonText,
     this.underline = false,
@@ -31,7 +31,7 @@ class CustomTextButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextButton(
       onPressed: onPressed,
-      style: style,
+      style: buttonStyle,
       child: CustomPaint(
         painter: underline ? TextUnderlinePainter(textColor, underlineThickness, underlineGap) : null,
         
