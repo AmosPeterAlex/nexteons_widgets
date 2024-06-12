@@ -12,7 +12,8 @@ class ReusableLoginTextField extends StatelessWidget {
       this.fontSize,
       this.fontWeight,
       this.style,
-      this.hintcolor});
+      this.hintcolor,
+      this.validator});
 
   final String text;
   final TextEditingController? controller;
@@ -22,6 +23,7 @@ class ReusableLoginTextField extends StatelessWidget {
   final FontWeight? fontWeight;
   final TextStyle? style;
   final Color? hintcolor;
+  final String? Function(String?)? validator;
 
   @override
   Widget build(BuildContext context) {
@@ -46,15 +48,8 @@ class ReusableLoginTextField extends StatelessWidget {
           height: 10,
         ),
 
-        // Text(
-        //   text,
-        //   style: TextStyle(
-        //           color: color ?? Theme.of(context).textTheme.bodyMedium?.color,
-        //           fontSize: fontSize ?? Theme.of(context).textTheme.bodyMedium?.fontSize,
-        //           fontWeight: fontWeight ??  Theme.of(context).textTheme.bodyMedium?.fontWeight)
-        //       .merge(style),
-        // ),
         ReusableTextFormField(
+          validator: validator,
           enabled: true,
           controller: controller,
           hintText: hintText,
