@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 class GroupSwitchingWidget extends StatefulWidget {
   final List<String> values;
 
+  ///do not need this widget right now
   const GroupSwitchingWidget({
     super.key,
     required this.values,
@@ -21,7 +22,6 @@ class _GroupSwitchingWidgetState extends State<GroupSwitchingWidget> {
         currentIndex--;
       }
     });
-    // widget.onUpPressed?.call();
   }
 
   void handleDownPressed() {
@@ -30,7 +30,6 @@ class _GroupSwitchingWidgetState extends State<GroupSwitchingWidget> {
         currentIndex++;
       }
     });
-    // widget.onDownPressed?.call();
   }
 
   @override

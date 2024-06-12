@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:nexteons_widgets/amos/widgets/scrollbar_widget.dart';
 
 const double _kScrollbarThickness = 14.0;
 const double _kScrollbarThicknessWithTrack = 22.0;
@@ -11,6 +12,7 @@ const Duration _kScrollbarFadeDuration = Duration(milliseconds: 300);
 const Duration _kScrollbarTimeToFade = Duration(milliseconds: 600);
 
 class CustomScrollbar extends StatelessWidget {
+  ///Added trackradius and called inside [MyScrollBarWidget]
   const CustomScrollbar({
     super.key,
     required this.child,
@@ -172,11 +174,11 @@ class _MaterialScrollbarState extends RawScrollbarState<_MaterialScrollbar> {
     return WidgetStateProperty.resolveWith((Set<WidgetState> states) {
       if (showScrollbar && _trackVisibility.resolve(states)) {
         return _scrollbarTheme.trackColor?.resolve(states) ??
-        //  const Color(0XFF000000);
-          (brightness == Brightness.light
+            //  const Color(0XFF000000);
+            (brightness == Brightness.light
                 ? onSurface.withOpacity(0.03)
                 : onSurface.withOpacity(0.05));
-            // Theme.of(context).disabledColor; //main il edh set akenm
+        // Theme.of(context).disabledColor; //main il edh set akenm
       }
       return const Color(0x00000000);
     });

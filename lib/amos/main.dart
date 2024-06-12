@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:nexteons_widgets/amos/core/theme/my_themes.dart';
 import 'package:nexteons_widgets/amos/sample_page.dart';
+import 'package:nexteons_widgets/sajin/utils/const/navikator_key_const.dart';
 
 void main() {
   runApp(MyApp1());
@@ -12,7 +13,7 @@ class MyApp1 extends StatelessWidget {
     return MaterialApp(
       home:  SamplePage(),
       theme: ThemeData(colorScheme: MaterialTheme.lightScheme()),
-
+      navigatorKey: navigatorKey,
       // theme: ThemeData(
       //   primaryColor: const Color(0XFF5570F1),
       //   highlightColor: const Color(0xff767680),
