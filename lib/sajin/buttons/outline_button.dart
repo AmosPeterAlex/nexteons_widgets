@@ -49,9 +49,10 @@ class CustomOutlineButton extends StatelessWidget {
         ),
       ).merge(buttonStyle),
       child: Row(
+         ///IF THERE is any issue in button calling in login screen commenet this line
         mainAxisSize: MainAxisSize.min,
 
-        ///IF THERE is any issue in button calling in login screen commenet this line
+       
         children: [
           if (icon != null)
             Icon(
