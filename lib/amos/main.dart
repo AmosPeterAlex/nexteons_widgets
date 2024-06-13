@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:nexteons_widgets/amos/core/theme/my_themes.dart';
 import 'package:nexteons_widgets/amos/sample_page.dart';
+import 'package:nexteons_widgets/core/theme/themes.dart';
 import 'package:nexteons_widgets/sajin/utils/const/navikator_key_const.dart';
 
 void main() {

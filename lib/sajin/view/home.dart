@@ -29,7 +29,7 @@ class _SajinHomeScreenState extends State<SajinHomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final cont = TextEditingController();
+    // final cont = TextEditingController();
 
     return Scaffold(
       body: MyScrollBarWidget(
