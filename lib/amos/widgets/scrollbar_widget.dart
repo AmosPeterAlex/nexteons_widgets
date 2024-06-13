@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:nexteons_widgets/amos/core/theme/my_themes.dart';
 import 'package:nexteons_widgets/amos/widgets/custom_scrollbar.dart';
 
 //custom widget
@@ -19,8 +18,8 @@ class MyScrollBarWidget extends StatelessWidget {
       data: ScrollbarThemeData(
         mainAxisMargin: 3,
         trackBorderColor: const WidgetStatePropertyAll(Colors.transparent),
-        trackColor:
-            WidgetStatePropertyAll(MaterialTheme.lightScheme().outlineVariant),
+        trackColor: WidgetStatePropertyAll(Theme.of(context).colorScheme.outlineVariant)
+            // WidgetStatePropertyAll(MaterialTheme.lightScheme().outlineVariant),
       ),
       child: CustomScrollbar(
         controller: controller,

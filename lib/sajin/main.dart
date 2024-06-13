@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-
+import 'package:nexteons_widgets/core/theme/themes.dart';
 import 'package:nexteons_widgets/sajin/utils/const/navikator_key_const.dart';
-import 'package:nexteons_widgets/sajin/utils/theme/theme.dart';
 import 'package:nexteons_widgets/sajin/view/home.dart';
 
 void main() {
