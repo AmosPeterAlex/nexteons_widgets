@@ -1,3 +1,4 @@
+///double values
 class MyPadding {
   /// Padding =2
   static const double xSmall = 2;
