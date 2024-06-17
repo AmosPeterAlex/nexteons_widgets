@@ -14,14 +14,17 @@ class MyApp1 extends StatelessWidget {
       home:  SamplePage(),
       theme: ThemeData(colorScheme: MaterialTheme.lightScheme()),
       navigatorKey: navigatorKey,
-      // theme: ThemeData(
+      debugShowCheckedModeBanner: false,
+    );
+  }
+}
+/*
+
+   // theme: ThemeData(
       //   primaryColor: const Color(0XFF5570F1),
       //   highlightColor: const Color(0xff767680),
       //   // highlightColor: const Color(0XFF838383), //thumb color Color(0xff767680)--outline
       //   disabledColor: const Color(0XFFD9D9D9),
       //   // disabledColor: const Color(0xffc6c5d0), //track color Color(0xffc6c5d0)--ouline varient
       // ),
-      debugShowCheckedModeBanner: false,
-    );
-  }
-}
+*/
