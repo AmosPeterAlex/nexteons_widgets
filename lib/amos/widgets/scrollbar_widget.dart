@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:nexteons_widgets/amos/widgets/custom_scrollbar.dart';
 
-//custom widget
+//custom widget from promting AI
 
 class MyScrollBarWidget extends StatelessWidget {
   final Widget child;
