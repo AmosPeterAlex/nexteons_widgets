@@ -189,7 +189,7 @@ class _SajinHomeScreenState extends State<SajinHomeScreen> {
                     ),
                   ],
                 ),
-                CheckboxWidget(
+                CheckboxTextWidget(
                   isChecked: isChecked,
                   onChanged: (value) {
                     isChecked = value!;
