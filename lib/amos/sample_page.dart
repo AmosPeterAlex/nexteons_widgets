@@ -25,8 +25,8 @@ class _SamplePageState extends State<SamplePage> {
       backgroundColor: Colors.black, //no need
       body: Center(
         child: Container(
-          width: 600,
-          height: 550,
+          width: 601,
+          height: 551,
           decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.circular(10),
