@@ -51,20 +51,6 @@ class _SamplePageState extends State<SamplePage> {
                         const SizedBox(
                           width: 10,
                         ),
-                        // const GroupSwitchingWidget(
-                        //   values: [
-                        //     "1",
-                        //     "1",
-                        //     "1h",
-                        //   ],
-                        // ),
-                        // CheckboxTextWidget(
-                        //   onChanged: (value) {
-                        //     isChecked = value!;
-                        //     setState(() {});
-                        //   },
-                        //   isChecked: isChecked,
-                        // ),
                         const SizedBox(
                           width: 10,
                         ),
@@ -76,14 +62,6 @@ class _SamplePageState extends State<SamplePage> {
                           },
                           text: 'from package',
                         ),
-                        // CheckboxTextWidget(
-                        //   text: "TICK",
-                        //   onChanged: (value) {
-                        //     isChecked = value!;
-                        //     setState(() {});
-                        //   },
-                        //   isChecked: isChecked,
-                        // ),
                       ],
                     ),
                     const Icon(Icons.delete)
