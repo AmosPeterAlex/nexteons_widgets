@@ -20,4 +20,7 @@ class MyPadding {
 
   /// Padding =30
   static const double xxxLarge = 30;
+
+  /// Padding =50
+  static const double xxxxLarge = 50;
 }
