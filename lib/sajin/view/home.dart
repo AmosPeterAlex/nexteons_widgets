@@ -189,14 +189,14 @@ class _SajinHomeScreenState extends State<SajinHomeScreen> {
                     ),
                   ],
                 ),
-                CheckboxTextWidget(
-                  isChecked: isChecked,
-                  onChanged: (value) {
-                    isChecked = value!;
-                    setState(() {});
-                  },
-                  text: "OK",
-                ),
+                // CheckboxTextWidget(
+                //   isChecked: isChecked,
+                //   onChanged: (value) {
+                //     isChecked = value!;
+                //     setState(() {});
+                //   },
+                //   text: "OK",
+                // ),
                 Column(
                   children: List.generate(
                     80,
