@@ -1,4 +1,4 @@
-# nexteons_widgets
+# new_widgets
 
 A new Flutter project.
 
